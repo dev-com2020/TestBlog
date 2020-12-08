@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
         <div>
             <StyledCheckbox type="checkbox" id='switcher' />
             <StyledLabel htmlFor="switcher">
-                <StyledBall className="ball" />
+                <StyledBall />
             </StyledLabel>
         </div>
     );

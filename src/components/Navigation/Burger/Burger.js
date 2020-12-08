@@ -6,7 +6,7 @@ import {
 
 const Burger = ({ onClick, isOpen }) => {
     return (
-        <StyledMenuButton className="burger-button" onClick={onClick} isOpen={isOpen} className={isOpen ? 'open' : null}>
+        <StyledMenuButton className="burger-button" onClick={onClick} className={isOpen ? 'open' : null}>
             <StyledMenuButtonBurger className="burger" />
         </StyledMenuButton>
     );

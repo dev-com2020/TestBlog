@@ -30,7 +30,6 @@ export const StyledMenuButtonBurger = styled.div`
         height: 4px;
         background-color: rgb(255, 255, 255);
         border-radius: 5px;
-        /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.404); */
         box-shadow: 0 3px 5px rgba(216, 208, 208, 0.404);
         transition: all .5s ease-in-out;
 
@@ -42,8 +41,7 @@ export const StyledMenuButtonBurger = styled.div`
             width: 30px;
             background-color: rgb(255, 255, 255);
             border-radius: 5px;
-        box-shadow: 0 3px 5px rgba(216, 208, 208, 0.404);
-            /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.404); */
+            box-shadow: 0 3px 5px rgba(216, 208, 208, 0.404);
             transition: all .5s ease-in-out;
         }
 
