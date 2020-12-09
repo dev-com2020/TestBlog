@@ -1,28 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { Line } from '../Line/Line';
-import ComputerImg from '../../assets/img/computer-bg.png';
-import MobileImg from '../../assets/img/mobile-bg.png';
-import SmartImg from '../../assets/img/smart-bg.png';
-import HomeImg from '../../assets/img/home-bg.png';
-import GameImg from '../../assets/img/game-bg.png';
-
-
-const StyledWrapper = styled.div`
-width:100%;
-display:flex;
-justify-content:space-between;
-margin-top: 25px;
-`;
-const StyledHeading = styled.h2`
-font-size: 2rem;
-font-weight: 700;
-`;
-const StyledImage = styled.div`
-height:266px;
-width:261px;
-background: linear-gradient(#0b112aa8,#0b112aa8),url(${({ src }) => src});
-`;
+import ComputerImg from '../../assets/img/komputery.png';
+import MobileImg from '../../assets/img/mobile.png';
+import SmartImg from '../../assets/img/smart-wear.png';
+import HomeImg from '../../assets/img/dom.png';
+import GameImg from '../../assets/img/gry.png';
+import { graphql, useStaticQuery } from 'gatsby';
+import {
+    StyledWrapper,
+    StyledHeading,
+    StyledImage,
+    StyledText
+} from './CategoriesStyles';
 
 const Categories = () => {
     return (
@@ -30,11 +20,11 @@ const Categories = () => {
             <StyledHeading>KATEGORIE:</StyledHeading>
             <Line />
             <StyledWrapper>
-                <StyledImage src={ComputerImg} />
-                <StyledImage src={MobileImg} />
-                <StyledImage src={SmartImg} />
-                <StyledImage src={HomeImg} />
-                <StyledImage src={GameImg} />
+                <StyledImage as={Link} to='/komputery' src={ComputerImg}> <StyledText>Komputery</StyledText> </StyledImage>
+                <StyledImage as={Link} to='/mobile' src={MobileImg} > <StyledText>Mobile</StyledText> </StyledImage>
+                <StyledImage as={Link} to='/smart-wear' src={SmartImg} > <StyledText>Smart wear</StyledText> </StyledImage>
+                <StyledImage as={Link} to='/dom' src={HomeImg} > <StyledText>Dom</StyledText> </StyledImage>
+                <StyledImage as={Link} to='/gry' src={GameImg} > <StyledText>Gry</StyledText> </StyledImage>
             </StyledWrapper>
         </>
     );

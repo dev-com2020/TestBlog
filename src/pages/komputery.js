@@ -1,11 +1,11 @@
 import * as React from "react"
-import MainLayout from '../layouts/index';
+import CategoryLayout from '../layouts/category';
 
 const IndexPage = () => {
     return (
-        <MainLayout>
+        <CategoryLayout title="Komputery">
             <div>Komputery</div>
-        </MainLayout>
+        </CategoryLayout>
     )
 }
 

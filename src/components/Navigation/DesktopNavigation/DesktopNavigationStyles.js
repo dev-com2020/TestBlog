@@ -13,6 +13,7 @@ align-items:center;
 height:68px;
 background-color:#0B112A;
 z-index:9999;
+overflow:hidden;
 `;
 export const StyledList = styled.ul`
 display:flex;

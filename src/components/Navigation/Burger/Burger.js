@@ -4,9 +4,9 @@ import {
     StyledMenuButtonBurger
 } from './BurgerStyles';
 
-const Burger = ({ onClick, isOpen }) => {
+const Burger = ({ click, isOpen }) => {
     return (
-        <StyledMenuButton className="burger-button" onClick={onClick} className={isOpen ? 'open' : null}>
+        <StyledMenuButton className="burger-button" onClick={click} className={isOpen ? 'open' : null}>
             <StyledMenuButtonBurger className="burger" />
         </StyledMenuButton>
     );

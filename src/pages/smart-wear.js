@@ -1,10 +1,12 @@
 import * as React from "react"
+import CategoryLayout from '../layouts/category';
+
 
 const IndexPage = () => {
     return (
-        <div>
+        <CategoryLayout title="Smart Wear">
             Smart-wear
-        </div>
+        </CategoryLayout>
     )
 }
 

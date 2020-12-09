@@ -24,13 +24,13 @@ const MobileNavigation = () => {
     }
     return (
         <StyledNav>
-            <Burger onClick={handleBurgerClick} isOpen={isOpen} />
+            <Burger click={handleBurgerClick} isOpen={isOpen} />
             <StyledListWrapper open={isOpen}>
                 <StyledList>
                     <StyledItem>
                         <StyledLink
                             activeClassName="active"
-                            exact to='/'
+                            to='/'
                             onClick={handleLinkClick}>
                             HOME
                         </StyledLink>

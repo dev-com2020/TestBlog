@@ -6,13 +6,14 @@ import styled from 'styled-components';
 import Categories from '../components/Categories/Categories';
 import Baner from '../components/Baner/Baner';
 
+
 const StyledWrapper = styled.div`
 width:80vw;
 margin: 80px auto auto;
 `;
 
 
-const MainLayout = ({ children, isBaner }) => {
+const MainLayout = ({ children, isBaner, isCategory }) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -31,17 +32,24 @@ const MainLayout = ({ children, isBaner }) => {
             }
         } else return null;
     }
+    const CategoryChecked = (isCategory) => {
+        if (isCategory) {
+            return <Categories />
+        } else return null;
+    }
     return (
         <>
             <GlobalStyle />
             {isMobile ? <MobileNavigation /> : <Navigation />}
             {BanerChecked(isBaner)}
             <StyledWrapper>
-                <Categories />
+                {CategoryChecked(isCategory)}
                 {children}
             </StyledWrapper>
         </>
     );
 }
+
+
 
 export default MainLayout;
