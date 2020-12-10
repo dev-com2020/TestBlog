@@ -36,7 +36,7 @@ const Authors = () => {
     `);
     const { zdjecieTworcy, imieINazwisko, oAutorze } = data.allDatoCmsAbout.edges[0].node;
     const [isMobile, setIsMobile] = useState(false);
-    IsMobileHook(setIsMobile);
+    IsMobileHook(setIsMobile, 1024);
     return (
         <StyledWrapper>
             <StyledHeading>

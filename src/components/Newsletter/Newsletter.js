@@ -43,12 +43,10 @@ const Newsletter = () => {
                     <StyledCheckboxInput type="checkbox" id="first-checkbox" />
                     Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
-                <TestDiv>
+                <StyledCheckboxLabel htmlFor="second-checkbox">
                     <StyledCheckboxInput type="checkbox" id="second-checkbox" />
-                    <StyledCheckboxLabel htmlFor="second-checkbox">
-                        Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
+                    Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
-                </TestDiv>
                 <StyledButton>ZAPISZ SIĘ!</StyledButton>
             </StyledForm>
         </StyledWrapper>);

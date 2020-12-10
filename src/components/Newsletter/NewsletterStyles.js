@@ -15,9 +15,11 @@ export const StyledHeading = styled.h2`
 font-size: 2rem;
 font-weight:700;
 color:#0B122D;
+text-align:center;
 `;
 export const StyledParagraph = styled.p`
 font-size: 2rem;
+text-align:center;
 `;
 export const StyledSpan = styled.span`
 display:block;
@@ -41,13 +43,15 @@ align-items:center;
 `;
 export const StyledCheckboxLabel = styled.label`
 width:60%;
+margin-top: 30px;
 margin-left:50px;
 font-size:1.2rem;
 `;
 export const StyledCheckboxInput = styled.input`
 `;
 export const StyledInput = styled.input`
-padding: 5px 20px;
+padding: 10px 15px;
+width: 270px;
 margin: 20px auto;
 border: 1px solid #C2BBBB;
 font-family:'Roboto condensed',sans-serif;
