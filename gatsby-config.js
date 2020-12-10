@@ -37,6 +37,12 @@ module.exports = {
         path: `${__dirname}/src/assets/svg`,
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `techblog-18`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],

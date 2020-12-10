@@ -44,7 +44,7 @@ color:white;
 text-decoration:none;
 display:block;
 &.active {
-    color:yellow;
+    color:#7EE5FF;
 }
 `;
 export const StyledSearch = styled.div`

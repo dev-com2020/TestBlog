@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Line } from '../Line/Line';
 import tiktokLogo from '../../assets/svg/tiktok.svg';
@@ -6,6 +6,8 @@ import youtubeLogo from '../../assets/svg/youtube.svg';
 import linkedinLogo from '../../assets/svg/linkedin.svg';
 import facebookLogo from '../../assets/svg/facebook.svg';
 import Newsletter from '../Newsletter/Newsletter';
+import IsMobileHook from '../../hooks/IsMobileHook';
+
 import {
     StyledWrapper,
     StyledHeading,
@@ -33,13 +35,18 @@ const Authors = () => {
       }
     `);
     const { zdjecieTworcy, imieINazwisko, oAutorze } = data.allDatoCmsAbout.edges[0].node;
+    const [isMobile, setIsMobile] = useState(false);
+    IsMobileHook(setIsMobile);
     return (
         <StyledWrapper>
             <StyledHeading>
-                O naszych twórcach 😄
+                O naszych twórcach <span role="img" aria-label="happy emoji">😄</span>
             </StyledHeading>
             <Line />
-            <StyledImg src={zdjecieTworcy.url} alt="michal test" />
+            <StyledImg
+                src={zdjecieTworcy.url}
+                alt="michal test"
+            />
             <StyledHeading>{imieINazwisko}</StyledHeading>
             <StyledParagraph>{oAutorze}.</StyledParagraph>
             <StyledList>
@@ -72,7 +79,7 @@ const Authors = () => {
                     </StyledLink>
                 </StyledItem>
             </StyledList>
-            <Newsletter />
+            {isMobile ? null : <Newsletter />}
         </StyledWrapper>);
 }
 

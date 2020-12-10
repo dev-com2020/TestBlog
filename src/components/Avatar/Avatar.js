@@ -4,7 +4,7 @@ import Author from '../../assets/img/authour-pic.png';
 
 const StyledWrapper = styled.div`
 display:flex;
-justify-content:space-between;
+justify-content:${({ isCenter }) => isCenter ? 'center' : 'space-between'};
 align-items:center;
 `;
 const StyledImg = styled.img`
@@ -25,9 +25,9 @@ font-weight:700;
     display: block;
 }
 `;
-const Avatar = ({ name, date }) => {
+const Avatar = ({ name, date, isCenter }) => {
     return (
-        <StyledWrapper>
+        <StyledWrapper isCenter={isCenter}>
             <StyledImg src={Author} />
             <StyledWrapperText>
                 <StyledParagraph>

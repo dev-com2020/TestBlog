@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 
 const NotFoundPage = () => {
     return (
         <>
-            <h1>Nie ma takiej strony!</h1>
+            <ArticlePreview />
         </>
     );
 }

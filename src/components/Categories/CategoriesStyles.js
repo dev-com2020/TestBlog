@@ -26,7 +26,7 @@ text-decoration:none;
 `;
 export const StyledText = styled.p`
 font-size: 2.2rem;
-color:#7EE5FF;
+color:#7EE5FF !important;
 text-transform:uppercase;
 @media (max-width:1000px) {
     font-size:1.5rem;

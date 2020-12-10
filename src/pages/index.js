@@ -1,9 +1,11 @@
-import * as React from "react"
+import React, { useState } from "react"
 import MainLayout from '../layouts/index';
 import styled from 'styled-components';
 import Lattest from '../components/Lattest/Lattest';
 import Authors from "../components/Authors/Authors";
-
+import ThemeArticle from '../components/ThemeArticle/ThemeArticle';
+import Newsletter from '../components/Newsletter/Newsletter';
+import IsMobileHook from '../hooks/IsMobileHook';
 
 const StyledWrapper = styled.div`
 width:80vw;
@@ -21,18 +23,22 @@ flex-basis:55%;
 const StyledAuthors = styled(Authors)`
 flex-basis:20%;
 `;
-const StyledSideBar = styled.div`
-display:flex;
-flex-direction:column;
-width:30%;
+const StyledNewsletterWrapper = styled.div`
+/* width:80vw; */
+margin:0 auto;
+overflow:hidden;
 `;
 const IndexPage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  IsMobileHook(setIsMobile, 1024);
   return (
     <MainLayout isBaner isCategory>
       <StyledWrapper>
         <StyledLattest />
         <StyledAuthors />
       </StyledWrapper>
+      <ThemeArticle />
+      {isMobile ? <StyledNewsletterWrapper><Newsletter /></StyledNewsletterWrapper> : null}
     </MainLayout>
   )
 }

@@ -19,6 +19,9 @@ body {
 html {
     font-size:62.5%;
 }
+p,h1,h2,h3 {
+    color:#212223 !important;
+}
 `;
 
 export default GlobalStyle;

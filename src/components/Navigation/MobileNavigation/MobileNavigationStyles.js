@@ -41,7 +41,7 @@ color:white;
 text-decoration:none;
 position:relative;
 &.active {
-    /* color:yellow; */
+    color:#7EE5FF;
 }
 `;
 

@@ -6,7 +6,6 @@ import {
     StyledItem,
     StyledLink,
     StyledImg,
-    ThemeSwitcherMobile
 } from './MobileNavigationStyles';
 import Burger from '../Burger/Burger';
 import Search from '../../../assets/svg/Search.svg';

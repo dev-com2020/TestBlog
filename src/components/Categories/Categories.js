@@ -6,7 +6,6 @@ import MobileImg from '../../assets/img/mobile.png';
 import SmartImg from '../../assets/img/smart-wear.png';
 import HomeImg from '../../assets/img/dom.png';
 import GameImg from '../../assets/img/gry.png';
-import { graphql, useStaticQuery } from 'gatsby';
 import {
     StyledWrapper,
     StyledHeading,
@@ -26,6 +25,7 @@ const Categories = () => {
                 <StyledImage as={Link} to='/dom' src={HomeImg} > <StyledText>Dom</StyledText> </StyledImage>
                 <StyledImage as={Link} to='/gry' src={GameImg} > <StyledText>Gry</StyledText> </StyledImage>
             </StyledWrapper>
+
         </>
     );
 }

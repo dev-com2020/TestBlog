@@ -9,6 +9,9 @@ font-size:7.1rem;
 font-weight:bold;
 color:#0B122D;
 text-transform:uppercase;
+@media(max-width:1024px) {
+    font-size:4rem;
+}
 `;
 const StyledArticlesWrapper = styled.div`
 width:80vw;
@@ -24,7 +27,6 @@ const CategoryLayout = ({ title }) => {
             <StyledHeading>{title}</StyledHeading>
             <Line />
             <StyledArticlesWrapper>
-                <Article />
                 <Article />
                 <Article />
                 <Article />
