@@ -12,7 +12,6 @@ align-items:center;
 export const StyledHeading = styled.h2`
 font-size: 2rem;
 font-weight:700;
-color:#0B122D;
 `;
 export const StyledImg = styled.img`
 width: 348px;
@@ -26,7 +25,6 @@ margin-top: 25px;
 export const StyledParagraph = styled.p`
 font-size: 2rem;
 font-weight: 300;
-color:#212223;
 text-align:center;
 width:90%;
 @media(max-width:530px) {

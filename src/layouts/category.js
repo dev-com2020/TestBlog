@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MainLayout from './index';
 import { Line } from '../components/Line/Line';
-import Article from '../components/Article/Article';
+import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 
 const StyledHeading = styled.h2`
 font-size:7.1rem;
@@ -20,16 +20,51 @@ display:grid;
 grid-template-rows: 1fr;
 grid-gap: 50px;
 `;
-
-const CategoryLayout = ({ title }) => {
+const slugify = text => {
+    return text
+        .toLowerCase()
+        .replace(/ą/g, 'a')
+        .replace(/ć/, 'c')
+        .replace(/ę/, 'e')
+        .replace(/ł/, 'l')
+        .replace(/ń/, 'n')
+        .replace(/ó/, 'o')
+        .replace(/ś/, 's')
+        .replace(/[ź|ż]/, 'z')
+        .replace(/ /g, '-')
+        .replace(/[^\w-]+/g, '');
+}
+const CategoryLayout = ({ children, dates, title }) => {
+    const items = [];
+    const render = number => {
+        for (let i = 0; i <= number; i++) {
+            let info = dates[i].node;
+            items.push(info);
+        }
+    }
     return (
         <MainLayout isBaner isCategory>
             <StyledHeading>{title}</StyledHeading>
             <Line />
             <StyledArticlesWrapper>
-                <Article />
-                <Article />
-                <Article />
+                {render(dates.length - 1)}
+                {items.map(info => {
+                    console.log(info.author)
+                    return (
+                        <ArticlePreview
+                            key={info.thumbnail.url}
+                            title={info.articleCategory}
+                            image={info.mainPhoto.url}
+                            category={info.articleCategory}
+                            heading={info.articleTitle}
+                            name={info.author}
+                            date={info.meta.createdAt}
+                            picture={info.thumbnail.url}
+                            slug={`${slugify(info.articleTitle)}`}
+                        />
+                    )
+                }
+                )}
             </StyledArticlesWrapper>
         </MainLayout>
     );

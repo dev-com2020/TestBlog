@@ -13,7 +13,6 @@ import {
     StyledInput,
     StyledInputLabel,
     StyledButton,
-    TestDiv
 } from './NewsletterStyles';
 
 const Newsletter = () => {

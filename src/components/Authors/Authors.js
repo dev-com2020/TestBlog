@@ -21,12 +21,12 @@ import {
 const Authors = () => {
     const data = useStaticQuery(graphql`
     query Authors {
-        allDatoCmsAbout {
+        allDatoCmsAboutt {
           edges {
             node {
-              imieINazwisko
-              oAutorze
-              zdjecieTworcy {
+              authorName
+              authorDescription
+              authorPicture {
                 url
               }
             }
@@ -34,7 +34,7 @@ const Authors = () => {
         }
       }
     `);
-    const { zdjecieTworcy, imieINazwisko, oAutorze } = data.allDatoCmsAbout.edges[0].node;
+    const { authorName, authorDescription, authorPicture } = data.allDatoCmsAboutt.edges[0].node;
     const [isMobile, setIsMobile] = useState(false);
     IsMobileHook(setIsMobile, 1024);
     return (
@@ -44,11 +44,11 @@ const Authors = () => {
             </StyledHeading>
             <Line />
             <StyledImg
-                src={zdjecieTworcy.url}
+                src={authorPicture.url}
                 alt="michal test"
             />
-            <StyledHeading>{imieINazwisko}</StyledHeading>
-            <StyledParagraph>{oAutorze}.</StyledParagraph>
+            <StyledHeading>{authorName}</StyledHeading>
+            <StyledParagraph>{authorDescription}.</StyledParagraph>
             <StyledList>
                 <StyledItem>
                     <StyledLink

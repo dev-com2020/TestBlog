@@ -7,6 +7,7 @@ import ThemeArticle from '../components/ThemeArticle/ThemeArticle';
 import Newsletter from '../components/Newsletter/Newsletter';
 import IsMobileHook from '../hooks/IsMobileHook';
 
+
 const StyledWrapper = styled.div`
 width:80vw;
 margin:30px auto 0;

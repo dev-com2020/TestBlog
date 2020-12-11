@@ -5,7 +5,6 @@ import { Line } from '../Line/Line';
 const StyledHeading = styled.h2`
 font-size: 2rem;
 font-weight:700;
-color:#0B122D;
 `;
 const StyledWrapper = styled.div`
 display:flex;

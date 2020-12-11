@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Author from '../../assets/img/authour-pic.png';
+// import Author from '../../assets/img/authour-pic.png';
 
 const StyledWrapper = styled.div`
 display:flex;
@@ -25,10 +25,10 @@ font-weight:700;
     display: block;
 }
 `;
-const Avatar = ({ name, date, isCenter }) => {
+const Avatar = ({ name, date, isCenter, picture }) => {
     return (
         <StyledWrapper isCenter={isCenter}>
-            <StyledImg src={Author} />
+            <StyledImg src={picture} />
             <StyledWrapperText>
                 <StyledParagraph>
                     {name}

@@ -14,7 +14,6 @@ width: 100%;
 export const StyledHeading = styled.h2`
 font-size: 2rem;
 font-weight:700;
-color:#0B122D;
 text-align:center;
 `;
 export const StyledParagraph = styled.p`
@@ -70,9 +69,4 @@ border:none;
 padding: 15px;
 font-size:1.8rem;
 font-family: 'Roboto condensed', sans-serif;
-`;
-export const TestDiv = styled.div`
-display:flex;
-justify-content:space-around;
-align-items:center;
 `;

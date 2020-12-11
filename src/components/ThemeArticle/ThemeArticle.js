@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Line } from '../Line/Line';
-import Article from '../Article/Article';
+import ArticlePreview from '../ArticlePreview/ArticlePreview';
 
 const StyledWrapper = styled.div`
 display:grid;
@@ -24,10 +24,10 @@ const ThemeArticle = () => {
         <StyledWrapper>
             <StyledHeading>Posty Tematyczne</StyledHeading>
             <Line />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
+            <ArticlePreview />
+            <ArticlePreview />
+            <ArticlePreview />
+            <ArticlePreview />
         </StyledWrapper>
     );
 }
