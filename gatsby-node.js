@@ -3,11 +3,11 @@ const slugify = require('slugify');
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
-    const computerPostTemplate = path.resolve('src/components/Article/ComputerArticle.js');
-    const mobilePostTemplate = path.resolve('src/components/Article/MobileArticle.js');
-    const gamePostTemplate = path.resolve('src/components/Article/GameArticle.js');
-    const homePostTemplate = path.resolve('src/components/Article/HomeArticle.js');
-    const smartPostTemplate = path.resolve('src/components/Article/SmartWearArticle.js');
+    const computerPostTemplate = path.resolve('src/layouts/Article/ComputerArticleTemplate.js');
+    const mobilePostTemplate = path.resolve('src/layouts/Article/MobileArticleTemplate.js');
+    const gamePostTemplate = path.resolve('src/layouts/Article/GameArticleTemplate.js');
+    const homePostTemplate = path.resolve('src/layouts/Article/HomeArticleTemplate.js');
+    const smartPostTemplate = path.resolve('src/layouts/Article/SmartArticleTemplate.js');
     const computerResult = await graphql(`
     query queryComputerCMS {
         allDatoCmsComputerarticle {
@@ -93,7 +93,7 @@ query queryMobileCMS {
             remove: /[*+~.()'"!:@]/g,
         });
         createPage({
-            path: `game/${slugifiedTitle}`,
+            path: `gry/${slugifiedTitle}`,
             component: gamePostTemplate,
             context: {
                 id: post.id

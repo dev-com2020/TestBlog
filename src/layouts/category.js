@@ -43,7 +43,7 @@ const CategoryLayout = ({ children, dates, title }) => {
         }
     }
     return (
-        <MainLayout isBaner isCategory>
+        <MainLayout isBaner>
             <StyledHeading>{title}</StyledHeading>
             <Line />
             <StyledArticlesWrapper>
