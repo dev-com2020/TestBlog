@@ -8,9 +8,33 @@ exports.createPages = async ({ graphql, actions }) => {
     const gamePostTemplate = path.resolve('src/layouts/Article/GameArticleTemplate.js');
     const homePostTemplate = path.resolve('src/layouts/Article/HomeArticleTemplate.js');
     const smartPostTemplate = path.resolve('src/layouts/Article/SmartArticleTemplate.js');
-    const computerResult = await graphql(`
-    query queryComputerCMS {
+    const result = await graphql(`
+    query queryCMS {
         allDatoCmsComputerarticle {
+            nodes {
+                id
+                articleTitle
+            }
+        }
+        allDatoCmsMobilearticle {
+            nodes {
+                id
+                articleTitle
+            }
+        }
+        allDatoCmsGamearticle {
+            nodes {
+                id
+                articleTitle
+            }
+        }
+        allDatoCmsSmartweararticle {
+            nodes {
+                id
+                articleTitle
+            }
+        }
+        allDatoCmsHomearticle {
             nodes {
                 id
                 articleTitle
@@ -18,47 +42,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     }
     `);
-    const mobileResult = await graphql(`
-query queryMobileCMS {
-    allDatoCmsMobilearticle {
-        nodes {
-            id
-            articleTitle
-        }
-    }
-}
-`);
-    const gameResult = await graphql(`
-query queryMobileCMS {
-    allDatoCmsGamearticle {
-        nodes {
-            id
-            articleTitle
-        }
-    }
-}
-`);
-    const smartResult = await graphql(`
-query queryMobileCMS {
-    allDatoCmsSmartweararticle {
-        nodes {
-            id
-            articleTitle
-        }
-    }
-}
-`);
-    const homeResult = await graphql(`
-query queryMobileCMS {
-    allDatoCmsHomearticle {
-        nodes {
-            id
-            articleTitle
-        }
-    }
-}
-`);
-    homeResult.data.allDatoCmsHomearticle.nodes.forEach(post => {
+    // const slugifiedTitle = slugify(text, { lower: true, remove: /[*+~.()'"!:@]/g, });
+    result.data.allDatoCmsHomearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
             remove: /[*+~.()'"!:@]/g,
@@ -73,7 +58,7 @@ query queryMobileCMS {
     });
 
 
-    smartResult.data.allDatoCmsSmartweararticle.nodes.forEach(post => {
+    result.data.allDatoCmsSmartweararticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
             remove: /[*+~.()'"!:@]/g,
@@ -87,7 +72,7 @@ query queryMobileCMS {
         })
     });
 
-    gameResult.data.allDatoCmsGamearticle.nodes.forEach(post => {
+    result.data.allDatoCmsGamearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
             remove: /[*+~.()'"!:@]/g,
@@ -101,7 +86,7 @@ query queryMobileCMS {
         })
     });
 
-    mobileResult.data.allDatoCmsMobilearticle.nodes.forEach(post => {
+    result.data.allDatoCmsMobilearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
             remove: /[*+~.()'"!:@]/g,
@@ -114,7 +99,7 @@ query queryMobileCMS {
             }
         })
     });
-    computerResult.data.allDatoCmsComputerarticle.nodes.forEach(post => {
+    result.data.allDatoCmsComputerarticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
             remove: /[*+~.()'"!:@]/g,

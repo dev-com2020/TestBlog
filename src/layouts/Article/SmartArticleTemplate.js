@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import ArticleView from '../../components/Article/ArticleView';
-
 export const query = graphql`
 query SmartsQuery($id: String!) {
     datoCmsSmartweararticle(id: {eq: $id}) {

@@ -9,10 +9,10 @@ import {
     StyledArticle
 } from './ArticlePreviewStyles';
 
-const ArticlePreview = ({ image, category, heading, name, date, picture, slug }) => {
+const ArticlePreview = ({ image, category, heading, name, date, picture, slug, isMain }) => {
     return (
-        <StyledArticle>
-            <StyledImg as={Link} to={slug} src={image} />
+        <StyledArticle isMain={isMain}>
+            <StyledImg as={Link} to={slug} src={image} isMain={isMain} />
             <StyledArticleTexts>
                 <StyledParagraph >{category}</StyledParagraph>
                 <StyledHeading as={Link} to={slug}>{heading}</StyledHeading>

@@ -4,12 +4,11 @@ import Avatar from '../Avatar/Avatar';
 export const StyledArticle = styled.div`
 display:flex;
 justify-content: flex-start;
-align-items:center;
+align-items:${({ isMain }) => isMain ? "flex-start" : "center"};
 position:relative;
+flex-direction: ${({ isMain }) => isMain ? 'column' : 'row'};
 @media(max-width:1024px) {
     flex-direction:column;
-    /* justify-content:flex-end; */
-    /* width:100%; */
     align-items:flex-start;
 }
 `;
@@ -19,14 +18,14 @@ flex-direction: column;
 align-items:flex-start;
 justify-content: flex-start;
 padding-left: 50px;
+margin-left: ${({ isMain }) => isMain ? "35px" : null};
 text-align:left;
 @media(min-width:1024px) {
-    text-align:center;
+    text-align:left;
     height:110%;
 }
 @media(max-width:1024px) {
     padding-left: 20px;
-    /* margin-left: 20px; */
 }
 `;
 export const StyledParagraph = styled.p`
@@ -34,7 +33,6 @@ font-size:2rem;
 font-weight:700;
 align-self:flex-start;
 @media(max-width:1024px) {
-    /* align-self:center; */
     font-size:1.6rem;
 }
 `;
@@ -46,7 +44,6 @@ margin-top: -10px;
 text-decoration: none;
 color:#212223;
 @media(max-width:1024px) {
-    /* text-align:center; */
     align-self: left;
     font-size:2.2rem;
 }
@@ -56,19 +53,19 @@ position:relative;
 left:20px;
 background: url(${({ src }) => src});
 background-size:cover;
-width:20%;
-height:100%;
+width:${({ isMain }) => isMain ? "100%" : "20%"};
+height:${({ isMain }) => isMain ? "400px" : "100%"};
 @media(max-width:1366px) {
-    width:30%;
+    width:${({ isMain }) => isMain ? null : "30%"};
 }
 @media(max-width:1024px)
 {
-    height:300px;
-    width:60%;
+    width: ${({ isMain }) => isMain ? "125%" : "60%"};
+    height: ${({ isMain }) => isMain ? null : "300px"};
 }
 @media(max-width:655px) {
-    width:80%;
-    height:150px;
+    width:${({ isMain }) => isMain ? "125%" : "80%"};
+    height:${({ isMain }) => isMain ? null : "150px"};
 }
 
 `;
