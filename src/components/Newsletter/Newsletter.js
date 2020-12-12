@@ -1,5 +1,5 @@
 import React from 'react';
-import { Line } from '../Line/Line';
+import Line from '../Line/Line';
 import NewsletterImg from '../../assets/img/newsletter.png';
 import {
     StyledWrapper,

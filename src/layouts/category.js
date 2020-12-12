@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainLayout from './index';
-import { Line } from '../components/Line/Line';
+import Line from '../components/Line/Line';
 import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 
 const StyledHeading = styled.h2`
@@ -49,7 +49,6 @@ const CategoryLayout = ({ children, dates, title }) => {
             <StyledArticlesWrapper>
                 {render(dates.length - 1)}
                 {items.map(info => {
-                    console.log(info.author)
                     return (
                         <ArticlePreview
                             key={info.thumbnail.url}

@@ -8,6 +8,7 @@ query MobilesQuery($id: String!) {
       articleTitle
       articleCategory
       articleTag
+      id
       author
       articleTag
       thumbnail {

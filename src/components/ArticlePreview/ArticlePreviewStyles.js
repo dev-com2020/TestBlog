@@ -43,21 +43,34 @@ font-size: 3.5rem;
 font-weight:700;
 text-align:left;
 margin-top: -10px;
+text-decoration: none;
+color:#212223;
 @media(max-width:1024px) {
     /* text-align:center; */
     align-self: left;
     font-size:2.2rem;
 }
 `;
-export const StyledImg = styled.img`
+export const StyledImg = styled.div`
 position:relative;
 left:20px;
-width:30%;
+background: url(${({ src }) => src});
+background-size:cover;
+width:20%;
 height:100%;
-@media(max-width:1024px) {
-    width:100%;
-    height:60%;
+@media(max-width:1366px) {
+    width:30%;
 }
+@media(max-width:1024px)
+{
+    height:300px;
+    width:60%;
+}
+@media(max-width:655px) {
+    width:80%;
+    height:150px;
+}
+
 `;
 export const StyledAvatar = styled(Avatar)`
 @media(max-width:1024px){

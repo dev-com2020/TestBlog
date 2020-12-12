@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Line } from '../Line/Line';
+import Line from '../Line/Line';
 import tiktokLogo from '../../assets/svg/tiktok.svg';
 import youtubeLogo from '../../assets/svg/youtube.svg';
 import linkedinLogo from '../../assets/svg/linkedin.svg';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Line } from '../Line/Line';
+import Line from '../Line/Line';
 import ComputerImg from '../../assets/img/komputery.png';
 import MobileImg from '../../assets/img/mobile.png';
 import SmartImg from '../../assets/img/smart-wear.png';

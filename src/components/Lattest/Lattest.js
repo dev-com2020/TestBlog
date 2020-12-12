@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Line } from '../Line/Line';
+import Line from '../Line/Line';
 
 const StyledHeading = styled.h2`
 font-size: 2rem;

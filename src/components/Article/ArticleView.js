@@ -1,5 +1,5 @@
 import React from 'react';
-import { Line } from '../Line/line';
+import Line from '../Line/line';
 import Avatar from '../Avatar/Avatar';
 import { Disqus } from 'gatsby-plugin-disqus';
 
@@ -36,13 +36,16 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
           isCenter />
         {content.map(item => {
           const itemKey = Object.keys(item)[1];
+          let randomInt = Math.floor(Math.random() * 159159159159);
           switch (itemKey) {
             case 'heading':
-              return (<StyledArticleHeading>{item.heading}</StyledArticleHeading>)
+              return (<StyledArticleHeading key={randomInt}>{item.heading}</StyledArticleHeading>)
             case 'picture':
-              return (<StyledArticleImg src={item.picture.url} />)
+              return (<StyledArticleImg key={randomInt} src={item.picture.url} />)
             case 'paragraph':
-              return (<StyledArticleParagraph>{item.paragraph}</StyledArticleParagraph>)
+              return (<StyledArticleParagraph key={randomInt}>{item.paragraph}</StyledArticleParagraph>)
+            default:
+              return null;
           }
         })}
         <Line />
@@ -51,7 +54,7 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
           {tags}
         </StyledTag>
         <StyledDisqus>
-          <Disqus></Disqus>
+          <Disqus />
         </StyledDisqus>
       </StyledArticleWrapper>
     </ArticleLayout>

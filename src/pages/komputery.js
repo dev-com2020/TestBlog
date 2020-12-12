@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import CategoryLayout from '../layouts/category';
 import { graphql } from 'gatsby';
 // import ArticlePreview from '../components/ArticlePreview/ArticlePreview';

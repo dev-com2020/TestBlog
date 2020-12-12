@@ -10,6 +10,7 @@ query ComputersQuery($id: String!) {
       articleTag
       author
       articleTag
+      id
       thumbnail {
         url
       }

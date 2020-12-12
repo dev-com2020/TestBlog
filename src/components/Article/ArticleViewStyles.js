@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MainLayout from '../../layouts/index';
+// import Image from 'gatsby-image';
 
 export const StyledHeading = styled.h2`
 font-size: 7rem;

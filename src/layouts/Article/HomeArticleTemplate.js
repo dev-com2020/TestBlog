@@ -9,6 +9,7 @@ query HomesQuery($id: String!) {
       articleCategory
       articleTag
       author
+      id
       articleTag
       thumbnail {
         url

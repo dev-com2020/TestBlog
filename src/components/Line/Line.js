@@ -17,4 +17,6 @@ position:relative;
 }
 `;
 
-export const Line = () => <StyledLine><span /></StyledLine>;
+const Line = () => <StyledLine><span /></StyledLine>
+
+export default Line;

@@ -119,7 +119,6 @@ query queryMobileCMS {
             lower: true,
             remove: /[*+~.()'"!:@]/g,
         });
-        console.log(slugifiedTitle);
         createPage({
             path: `komputery/${slugifiedTitle}`,
             component: computerPostTemplate,
