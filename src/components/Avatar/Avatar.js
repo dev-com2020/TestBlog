@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Author from '../../assets/img/authour-pic.png';
 
 const StyledWrapper = styled.div`
 display:flex;

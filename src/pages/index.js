@@ -25,7 +25,6 @@ const StyledAuthors = styled(Authors)`
 flex-basis:20%;
 `;
 const StyledNewsletterWrapper = styled.div`
-/* width:80vw; */
 margin:0 auto;
 overflow:hidden;
 `;

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
 query MobileInfo {
-    allDatoCmsMobilearticle(filter:{locale:{eq:"pl"}}) {
+    allDatoCmsMobilearticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
       edges {
         node {
           author
@@ -26,13 +26,11 @@ query MobileInfo {
 `;
 
 const IndexPage = ({ data }) => {
-    const dates = data.allDatoCmsMobilearticle.edges;
+  const dates = data.allDatoCmsMobilearticle.edges;
 
-    return (
-        <CategoryLayout title="Mobile" dates={dates}>
-            Mobile
-        </CategoryLayout>
-    )
+  return (
+    <CategoryLayout title="Mobile" dates={dates} />
+  )
 }
 
 export default IndexPage

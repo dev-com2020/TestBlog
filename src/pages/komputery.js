@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
 query ComputerInfo {
-    allDatoCmsComputerarticle(filter:{locale:{eq:"pl"}}) {
+    allDatoCmsComputerarticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
       edges {
         node {
           author

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
 query HomeInfo {
-    allDatoCmsHomearticle(filter:{locale:{eq:"pl"}}) {
+    allDatoCmsHomearticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
       edges {
         node {
           author
@@ -26,12 +26,11 @@ query HomeInfo {
 `;
 
 const IndexPage = ({ data }) => {
-    const dates = data.allDatoCmsHomearticle.edges;
+  const dates = data.allDatoCmsHomearticle.edges;
 
-    return (
-        <CategoryLayout title="Dom" dates={dates}>
-        </CategoryLayout>
-    )
+  return (
+    <CategoryLayout title="Dom" dates={dates} />
+  )
 }
 
 export default IndexPage

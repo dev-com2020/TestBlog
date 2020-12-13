@@ -22,22 +22,8 @@ font-weight:700;
 `;
 
 const ThemeArticle = () => {
-    const data = useStaticQuery(graphql`
-    query Siema {
-        allDatoCmsComputerarticle(sort:{fields:meta___createdAt,order: DESC}) {
-          edges {
-            node {
-             id
-              author
-              articleTitle
-            }
-          }
-        }
-      }
-    `);
     return (
         <StyledWrapper>
-            {console.log(data.allDatoCmsComputerarticle.edges[0].node)}
             <StyledHeading>Posty Tematyczne</StyledHeading>
             <Line />
             <ArticlePreview />

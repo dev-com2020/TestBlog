@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MainLayout from './index';
 import Line from '../components/Line/Line';
 import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
+import { slugify } from '../hooks/Slugify';
 
 const StyledHeading = styled.h2`
 font-size:7.1rem;
@@ -20,20 +21,6 @@ display:grid;
 grid-template-rows: 1fr;
 grid-gap: 50px;
 `;
-const slugify = text => {
-    return text
-        .toLowerCase()
-        .replace(/ą/g, 'a')
-        .replace(/ć/g, 'c')
-        .replace(/ę/g, 'e')
-        .replace(/ł/g, 'l')
-        .replace(/ń/g, 'n')
-        .replace(/ó/g, 'o')
-        .replace(/ś/g, 's')
-        .replace(/[ź|ż]/g, 'z')
-        .replace(/ /g, '-')
-        .replace(/[^\w-]+/g, '');
-}
 const CategoryLayout = ({ children, dates, title }) => {
     const items = [];
     const render = number => {

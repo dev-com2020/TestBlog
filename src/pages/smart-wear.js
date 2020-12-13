@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
 query SmartInfo {
-    allDatoCmsSmartweararticle(filter:{locale:{eq:"pl"}}) {
+    allDatoCmsSmartweararticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
       edges {
         node {
           author
@@ -26,13 +26,11 @@ query SmartInfo {
 `;
 
 const IndexPage = ({ data }) => {
-    const dates = data.allDatoCmsSmartweararticle.edges;
+  const dates = data.allDatoCmsSmartweararticle.edges;
 
-    return (
-        <CategoryLayout title="Smart Wear" dates={dates}>
-            Smart-wear
-        </CategoryLayout>
-    )
+  return (
+    <CategoryLayout title="Smart Wear" dates={dates} />
+  )
 }
 
 export default IndexPage

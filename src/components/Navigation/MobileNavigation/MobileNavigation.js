@@ -80,7 +80,7 @@ const MobileNavigation = () => {
                     </StyledItem>
                     <StyledItem>
                         <StyledLink
-                            to='/'
+                            to='/search'
                             onClick={handleLinkClick}
                         >
                             SZUKAJ <StyledImg src={Search} alt="Search" />
