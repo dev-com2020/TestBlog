@@ -1,16 +1,25 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import ArticlePreview from '../ArticlePreview/ArticlePreview';
 import { slugify } from '../../hooks/Slugify';
-import {
-  ArticlePreviewWrapper,
-  StyledHeading
-} from './SearchStyles';
-import Line from '../Line/Line';
+import Social from '../Social/Social'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../../assets/fontAwesome/FontAwesome'
+import Avatar from '../Avatar/Avatar';
+import { Link } from 'gatsby';
 
-const SearchQuery = ({ searchValue, isSearching }) => {
-  const data = useStaticQuery(graphql`
-query SearchQuery {
+import {
+    Image,
+    AboutInfo,
+    Category,
+    CategoryName,
+    Favorite,
+    Headline,
+    AuthorInfo
+} from './PopularStyles'
+
+const PopularQuery = () => {
+    const data = useStaticQuery(graphql`
+query PopularQuery {
   allDatoCmsComputerarticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
@@ -178,38 +187,44 @@ query SearchQuery {
   }
 }
 `);
-  const queryArray = [];
-  const queries = () => {
-    data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
-  }
-  queries();
-  const filteredQueryArray = queryArray.filter(item => item.articleTitle.includes(searchValue.toLowerCase()) || item.articleTag.includes(searchValue.toLowerCase()));
-  return (
-    <ArticlePreviewWrapper>
-      {isSearching ? <StyledHeading>Wyszukiwanie: {searchValue}</StyledHeading> : null}
-      {isSearching ? filteredQueryArray.map(post =>
+    const queryArray = [];
+    const queries = () => {
+        data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
+    };
+    queries();
+    const filteredQueryArray = queryArray.filter(item => item.articleTag.includes("recenzja"));
+    return (
         <>
-          <ArticlePreview
-            main
-            key={post.thumbnail.url}
-            excerpt={post.excerpt}
-            title={post.articleCategory}
-            image={post.mainPhoto.url}
-            category={post.articleCategory}
-            heading={post.articleTitle}
-            name={post.author}
-            date={post.meta.createdAt}
-            picture={post.thumbnail.url}
-            slug={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
-          />
+            {filteredQueryArray.map(post =>
+                <div className="popular">
+                    <Image src={post.mainPhoto.url} as={Link} to={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}>
+                        <Social />
+                    </Image>
+                    <AboutInfo>
+                        <Category>
+                            <CategoryName>{post.articleCategory}</CategoryName>
+                            <Favorite>
+                                <span>12</span>
+                                <FontAwesomeIcon icon={'heart'} className='icon' color="gray" />
+                            </Favorite>
+                        </Category>
+                        <Headline as={Link} to={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}>{post.articleTitle}</Headline>
+                        <Avatar
+                            isCenter
+                            isPopular
+                            picture={post.thumbnail.url}
+                            date={post.meta.createdAt}
+                            name={post.author}
+                        />
+                    </AboutInfo>
+                </div>
+            )}
         </>
-      ) : null}
-    </ArticlePreviewWrapper>
-  )
+    );
 }
 
-export default SearchQuery;
+export default PopularQuery;

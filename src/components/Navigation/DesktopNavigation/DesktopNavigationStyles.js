@@ -40,11 +40,11 @@ width:300px;
 export const StyledLink = styled(Link)`
 font-weight:300;
 font-size:2rem;
-color:white;
+color:white !important;
 text-decoration:none;
 display:block;
 &.active {
-    color:#7EE5FF;
+    color:#7EE5FF !important;
 }
 `;
 export const StyledSearch = styled.div`
@@ -58,7 +58,8 @@ right:-30px;
 top:4.5px;
 `;
 export const StyledSearchLink = styled(Link)`
-color:white;
+color:white !important;
 position:relative;
 font-size:2rem;
+text-decoration: none;
 `;

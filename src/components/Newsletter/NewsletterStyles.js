@@ -64,7 +64,6 @@ export const StyledButton = styled.button`
 width:55%;
 margin:35px auto auto;
 background-color: #0B122D;
-color:white;
 border:none;
 padding: 15px;
 font-size:1.8rem;

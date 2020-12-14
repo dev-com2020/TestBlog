@@ -4,11 +4,12 @@ import MainLayout from './index';
 import Line from '../components/Line/Line';
 import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 import { slugify } from '../hooks/Slugify';
+import Popular from '../components/Popular/Popular';
+
 
 const StyledHeading = styled.h2`
 font-size:7.1rem;
 font-weight:bold;
-color:#0B122D;
 text-transform:uppercase;
 @media(max-width:1024px) {
     font-size:4rem;
@@ -20,6 +21,22 @@ margin:100px auto 0;
 display:grid;
 grid-template-rows: 1fr;
 grid-gap: 50px;
+`;
+const Headline = styled.h2`
+padding-top: 2rem;
+font-size: 20px;
+font-weight: bold;
+justify-self: left;
+`
+
+const StyledPopularWrapper = styled.div`
+display:flex;
+justify-content:space-between;
+@media(max-width: 1366px) {
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 `;
 const CategoryLayout = ({ children, dates, title }) => {
     const items = [];
@@ -53,6 +70,11 @@ const CategoryLayout = ({ children, dates, title }) => {
                 }
                 )}
             </StyledArticlesWrapper>
+            <Headline>Popularne:</Headline>
+            <Line />
+            <StyledPopularWrapper>
+                <Popular />
+            </StyledPopularWrapper>
         </MainLayout>
     );
 }

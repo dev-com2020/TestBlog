@@ -6,7 +6,7 @@ import Authors from "../components/Authors/Authors";
 import ThemeArticle from '../components/ThemeArticle/ThemeArticle';
 import Newsletter from '../components/Newsletter/Newsletter';
 import IsMobileHook from '../hooks/IsMobileHook';
-
+import PopularPosts from '../layouts/PopularPosts';
 
 const StyledWrapper = styled.div`
 width:80vw;
@@ -37,6 +37,7 @@ const IndexPage = () => {
         <StyledLattest />
         <StyledAuthors />
       </StyledWrapper>
+      <PopularPosts />
       <ThemeArticle />
       {isMobile ? <StyledNewsletterWrapper><Newsletter />
       </StyledNewsletterWrapper> : null}

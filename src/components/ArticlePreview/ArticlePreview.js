@@ -10,11 +10,11 @@ import {
     StyledExcerpt
 } from './ArticlePreviewStyles';
 
-const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt }) => {
+const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt, theme }) => {
     return (
         <StyledArticle main={main}>
             <StyledImg as={Link} to={slug} src={image} main={main} index={index} />
-            <StyledArticleTexts>
+            <StyledArticleTexts theme={theme} main={main}>
                 <StyledParagraph >{category}</StyledParagraph>
                 <StyledHeading as={Link} to={slug}>{heading}</StyledHeading>
                 <StyledExcerpt as={Link} to={slug}>{excerpt}</StyledExcerpt>

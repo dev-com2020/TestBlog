@@ -46,7 +46,7 @@ const Newsletter = () => {
                     <StyledCheckboxInput type="checkbox" id="second-checkbox" />
                     Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
-                <StyledButton>ZAPISZ SIĘ!</StyledButton>
+                <StyledButton className="submit">ZAPISZ SIĘ!</StyledButton>
             </StyledForm>
         </StyledWrapper>);
 }

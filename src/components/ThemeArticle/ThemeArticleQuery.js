@@ -1,16 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import ArticlePreview from '../ArticlePreview/ArticlePreview';
 import { slugify } from '../../hooks/Slugify';
-import {
-  ArticlePreviewWrapper,
-  StyledHeading
-} from './SearchStyles';
-import Line from '../Line/Line';
+import ArticlePreview from '../ArticlePreview/ArticlePreview';
 
-const SearchQuery = ({ searchValue, isSearching }) => {
-  const data = useStaticQuery(graphql`
-query SearchQuery {
+const ThemeQuery = () => {
+    const data = useStaticQuery(graphql`
+query ThemeArticleQuery {
   allDatoCmsComputerarticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
@@ -178,38 +173,36 @@ query SearchQuery {
   }
 }
 `);
-  const queryArray = [];
-  const queries = () => {
-    data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
-    data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
-  }
-  queries();
-  const filteredQueryArray = queryArray.filter(item => item.articleTitle.includes(searchValue.toLowerCase()) || item.articleTag.includes(searchValue.toLowerCase()));
-  return (
-    <ArticlePreviewWrapper>
-      {isSearching ? <StyledHeading>Wyszukiwanie: {searchValue}</StyledHeading> : null}
-      {isSearching ? filteredQueryArray.map(post =>
+    const queryArray = [];
+    const queries = () => {
+        data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
+        data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
+    };
+    queries();
+    const filteredQueryArray = queryArray.filter(item => item.articleTag.includes("recenzja"));
+    return (
         <>
-          <ArticlePreview
-            main
-            key={post.thumbnail.url}
-            excerpt={post.excerpt}
-            title={post.articleCategory}
-            image={post.mainPhoto.url}
-            category={post.articleCategory}
-            heading={post.articleTitle}
-            name={post.author}
-            date={post.meta.createdAt}
-            picture={post.thumbnail.url}
-            slug={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
-          />
+            {filteredQueryArray.map(post =>
+                <ArticlePreview
+                    main
+                    theme
+                    key={post.thumbnail.url}
+                    excerpt={post.excerpt}
+                    title={post.articleCategory}
+                    image={post.mainPhoto.url}
+                    category={post.articleCategory}
+                    heading={post.articleTitle}
+                    name={post.author}
+                    date={post.meta.createdAt}
+                    picture={post.thumbnail.url}
+                    slug={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
+                />
+            )}
         </>
-      ) : null}
-    </ArticlePreviewWrapper>
-  )
+    );
 }
 
-export default SearchQuery;
+export default ThemeQuery;

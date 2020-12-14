@@ -2,6 +2,7 @@ import React from 'react';
 import Line from '../Line/line';
 import Avatar from '../Avatar/Avatar';
 import { Disqus } from 'gatsby-plugin-disqus';
+import Popular from '../Popular/Popular';
 
 import {
   StyledHeading,
@@ -14,6 +15,8 @@ import {
   StyledTag,
   StyledDisqus,
   ArticleLayout,
+  StyledPopularWrapper,
+  Headline,
 } from './ArticleViewStyles';
 
 
@@ -53,10 +56,15 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
           TAGI:
           {tags}
         </StyledTag>
-        <StyledDisqus>
+        <StyledDisqus className="disqus">
           <Disqus />
         </StyledDisqus>
       </StyledArticleWrapper>
+      <Headline>Popularne:</Headline>
+      <Line />
+      <StyledPopularWrapper>
+        <Popular />
+      </StyledPopularWrapper>
     </ArticleLayout>
   );
 }

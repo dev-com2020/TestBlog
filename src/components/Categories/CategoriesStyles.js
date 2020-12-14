@@ -22,12 +22,11 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-decoration:none;
-
 `;
 export const StyledText = styled.p`
 font-size: 2.2rem;
-color:#7EE5FF !important;
 text-transform:uppercase;
+color: #7EE5FF !important;
 @media (max-width:1000px) {
     font-size:1.5rem;
 }

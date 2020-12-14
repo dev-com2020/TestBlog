@@ -37,11 +37,12 @@ list-style:none;
 `;
 export const StyledLink = styled(Link)`
 font-size: 1.8rem;
-color:white;
+color:white !important;
 text-decoration:none;
 position:relative;
+text-decoration: none;
 &.active {
-    color:#7EE5FF;
+    color:#7EE5FF !important;
 }
 `;
 

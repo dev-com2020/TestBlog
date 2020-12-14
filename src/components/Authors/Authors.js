@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Line from '../Line/Line';
-import tiktokLogo from '../../assets/svg/tiktok.svg';
-import youtubeLogo from '../../assets/svg/youtube.svg';
-import linkedinLogo from '../../assets/svg/linkedin.svg';
-import facebookLogo from '../../assets/svg/facebook.svg';
 import Newsletter from '../Newsletter/Newsletter';
 import IsMobileHook from '../../hooks/IsMobileHook';
 
@@ -13,9 +9,6 @@ import {
     StyledHeading,
     StyledImg,
     StyledParagraph,
-    StyledList,
-    StyledItem,
-    StyledLink,
 } from './AuthorsStyles';
 
 const Authors = () => {
@@ -49,36 +42,6 @@ const Authors = () => {
             />
             <StyledHeading>{authorName}</StyledHeading>
             <StyledParagraph>{authorDescription}.</StyledParagraph>
-            <StyledList>
-                <StyledItem>
-                    <StyledLink
-                        src={tiktokLogo}
-                        href="https://tiktok.com"
-                    >
-                    </StyledLink>
-                </StyledItem>
-                <StyledItem>
-                    <StyledLink
-                        src={youtubeLogo}
-                        href="https://youtube.com"
-                    >
-                    </StyledLink>
-                </StyledItem>
-                <StyledItem>
-                    <StyledLink
-                        src={linkedinLogo}
-                        href="https://linkedin.com"
-                    >
-                    </StyledLink>
-                </StyledItem>
-                <StyledItem>
-                    <StyledLink
-                        src={facebookLogo}
-                        href="https://facebook.com"
-                    >
-                    </StyledLink>
-                </StyledItem>
-            </StyledList>
             {isMobile ? null : <Newsletter />}
         </StyledWrapper>);
 }

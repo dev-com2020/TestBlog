@@ -65,8 +65,24 @@ font-weight: 300;
 `;
 export const StyledDisqus = styled.div`
 width:100%;
+padding: 50px;
 `;
 
 export const ArticleLayout = styled(MainLayout)`
 overflow-x:hidden;
 `;
+export const StyledPopularWrapper = styled.div`
+display:flex;
+justify-content:space-between;
+@media(max-width: 1366px) {
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+`;
+export const Headline = styled.h2`
+padding-top: 2rem;
+font-size: 20px;
+font-weight: bold;
+justify-self: left;
+`

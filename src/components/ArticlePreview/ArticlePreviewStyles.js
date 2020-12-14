@@ -18,10 +18,11 @@ flex-direction: column;
 align-items:flex-start;
 justify-content: flex-start;
 padding-left: 50px;
-margin-left: ${({ main }) => main ? "35px" : null};
 text-align:left;
+width: ${({ theme }) => theme ? "80%" : "100%"};
 @media(min-width:1024px) {
     text-align:left;
+    margin-left:${({ main }) => main ? "-25px" : null};
 }
 @media(max-width:1024px) {
     padding-left: 20px;
@@ -41,7 +42,7 @@ font-weight:700;
 text-align:left;
 margin-top: -10px;
 text-decoration: none;
-color:#212223;
+
 @media(max-width:1024px) {
     align-self: left;
     font-size:2.2rem;
@@ -79,7 +80,7 @@ export const StyledExcerpt = styled.p`
 font-size:2rem;
 font-weight:400;
 text-decoration:none;
-color:#353637;
+
 margin: 25px 5px;
 @media(max-width:1024px) {
     align-self:left;
