@@ -38,7 +38,8 @@ const IndexPage = () => {
         <StyledAuthors />
       </StyledWrapper>
       <ThemeArticle />
-      {isMobile ? <StyledNewsletterWrapper><Newsletter /></StyledNewsletterWrapper> : null}
+      {isMobile ? <StyledNewsletterWrapper><Newsletter />
+      </StyledNewsletterWrapper> : null}
     </MainLayout>
   )
 }

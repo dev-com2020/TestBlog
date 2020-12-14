@@ -15,7 +15,7 @@ query GamesQuery($id: String!) {
         url
       }
       meta {
-        createdAt(formatString:"MM.DD.YYYY")
+        createdAt(formatString:"MM:HH - MM.DD.YYYY")
       }
       mainPhoto {
         url

@@ -16,7 +16,8 @@ const Search = () => {
         setSearchValue(e.target.value);
         setIsSearching(false);
     }
-    const handleButtonClick = () => {
+    const handleButtonClick = e => {
+        e.preventDefault();
         setIsSearching(true);
     }
     return (
@@ -26,10 +27,20 @@ const Search = () => {
         </StyledHeading>
             <Line />
             <StyledFormWrapper>
-                <StyledInput value={searchValue} onChange={handleSearchChange} />
-                <StyledButton onClick={handleButtonClick}>Wyszukaj!</StyledButton>
+                <StyledInput
+                    value={searchValue}
+                    onChange={handleSearchChange}
+                    placeholder="Wpisz wyszukiwaną frazę"
+                />
+                <StyledButton
+                    type="submit"
+                    onClick={handleButtonClick}>
+                    Wyszukaj!
+                    </StyledButton>
             </StyledFormWrapper>
-            <SearchQuery searchValue={searchValue} isSearching={isSearching} />
+            <SearchQuery
+                searchValue={searchValue}
+                isSearching={isSearching} />
         </>
     );
 }

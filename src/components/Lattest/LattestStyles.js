@@ -12,4 +12,7 @@ margin-right:100px;
 `;
 export const ArticlePreviewWrapper = styled.div`
 margin-top: 50px;
+display:flex;
+flex-direction:column;
+grid-gap: 70px;
 `;

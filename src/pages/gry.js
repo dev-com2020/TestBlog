@@ -19,6 +19,7 @@ query GameInfo {
           }
           articleTitle
           articleCategory
+          excerpt
         }
       }
     }

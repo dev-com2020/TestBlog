@@ -20,6 +20,7 @@ query ComputerInfo {
           }
           articleTitle
           articleCategory
+          excerpt
         }
       }
     }

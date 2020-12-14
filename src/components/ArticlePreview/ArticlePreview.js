@@ -6,17 +6,18 @@ import {
     StyledHeading,
     StyledImg,
     StyledAvatar,
-    StyledArticle
+    StyledArticle,
+    StyledExcerpt
 } from './ArticlePreviewStyles';
 
-const ArticlePreview = ({ image, category, heading, name, date, picture, slug, isMain, pageContext }) => {
+const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt }) => {
     return (
-        <StyledArticle isMain={isMain}>
-        {console.log(pageContext)}
-            <StyledImg as={Link} to={slug} src={image} isMain={isMain} />
+        <StyledArticle main={main}>
+            <StyledImg as={Link} to={slug} src={image} main={main} index={index} />
             <StyledArticleTexts>
                 <StyledParagraph >{category}</StyledParagraph>
                 <StyledHeading as={Link} to={slug}>{heading}</StyledHeading>
+                <StyledExcerpt as={Link} to={slug}>{excerpt}</StyledExcerpt>
                 <StyledAvatar name={name} date={date} picture={picture} />
             </StyledArticleTexts>
         </StyledArticle>

@@ -4,9 +4,9 @@ import Avatar from '../Avatar/Avatar';
 export const StyledArticle = styled.div`
 display:flex;
 justify-content: flex-start;
-align-items:${({ isMain }) => isMain ? "flex-start" : "center"};
+align-items:${({ main }) => main ? "flex-start" : "center"};
 position:relative;
-flex-direction: ${({ isMain }) => isMain ? 'column' : 'row'};
+flex-direction: ${({ main }) => main ? 'column' : 'row'};
 @media(max-width:1024px) {
     flex-direction:column;
     align-items:flex-start;
@@ -18,11 +18,10 @@ flex-direction: column;
 align-items:flex-start;
 justify-content: flex-start;
 padding-left: 50px;
-margin-left: ${({ isMain }) => isMain ? "35px" : null};
+margin-left: ${({ main }) => main ? "35px" : null};
 text-align:left;
 @media(min-width:1024px) {
     text-align:left;
-    height:110%;
 }
 @media(max-width:1024px) {
     padding-left: 20px;
@@ -53,19 +52,19 @@ position:relative;
 left:20px;
 background: url(${({ src }) => src});
 background-size:cover;
-width:${({ isMain }) => isMain ? "100%" : "20%"};
-height:${({ isMain }) => isMain ? "400px" : "100%"};
+width:${({ main }) => main ? "100%" : "20%"};
+height:${({ main }) => main ? "400px" : "100%"};
 @media(max-width:1366px) {
-    width:${({ isMain }) => isMain ? null : "30%"};
+    width:${({ main }) => main ? null : "30%"};
 }
 @media(max-width:1024px)
 {
-    width: ${({ isMain }) => isMain ? "125%" : "60%"};
-    height: ${({ isMain }) => isMain ? null : "300px"};
+    width: ${({ main }) => main ? "125%" : "60%"};
+    height: ${({ main }) => main ? null : "300px"};
 }
 @media(max-width:655px) {
-    width:${({ isMain }) => isMain ? "125%" : "80%"};
-    height:${({ isMain }) => isMain ? null : "150px"};
+    width:${({ index }) => index ? "125%" : "75%"};
+    height:${({ main }) => main ? null : "150px"};
 }
 
 `;
@@ -73,5 +72,18 @@ export const StyledAvatar = styled(Avatar)`
 @media(max-width:1024px){
     justify-self:left;
     align-self:left;
+}
+`;
+
+export const StyledExcerpt = styled.p`
+font-size:2rem;
+font-weight:400;
+text-decoration:none;
+color:#353637;
+margin: 25px 5px;
+@media(max-width:1024px) {
+    align-self:left;
+    font-size:1.6rem;
+    margin: 25px 0;
 }
 `;

@@ -19,6 +19,7 @@ query MobileInfo {
           }
           articleTitle
           articleCategory
+          excerpt
         }
       }
     }

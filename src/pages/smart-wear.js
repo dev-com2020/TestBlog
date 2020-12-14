@@ -19,6 +19,7 @@ query SmartInfo {
           }
           articleTitle
           articleCategory
+          excerpt
         }
       }
     }

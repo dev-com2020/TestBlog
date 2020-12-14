@@ -39,6 +39,7 @@ const CategoryLayout = ({ children, dates, title }) => {
                     return (
                         <ArticlePreview
                             key={info.thumbnail.url}
+                            excerpt={info.excerpt}
                             title={info.articleCategory}
                             image={info.mainPhoto.url}
                             category={info.articleCategory}

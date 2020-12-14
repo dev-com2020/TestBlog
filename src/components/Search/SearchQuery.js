@@ -1,8 +1,12 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import ArticlePreview from '../ArticlePreview/ArticlePreview';
-import { ArticlePreviewWrapper } from './SearchStyles';
 import { slugify } from '../../hooks/Slugify';
+import {
+  ArticlePreviewWrapper,
+  StyledHeading
+} from './SearchStyles';
+import Line from '../Line/Line';
 
 const SearchQuery = ({ searchValue, isSearching }) => {
   const data = useStaticQuery(graphql`
@@ -10,7 +14,8 @@ query SearchQuery {
   allDatoCmsComputerarticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
-        articleTitle
+              excerpt
+              articleTitle
         articleCategory
         articleTag
         author
@@ -18,7 +23,7 @@ query SearchQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM.DD.YYYY")
+          createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -42,7 +47,8 @@ query SearchQuery {
   allDatoCmsGamearticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
-        articleTitle
+              excerpt
+              articleTitle
         articleCategory
         articleTag
         author
@@ -50,7 +56,7 @@ query SearchQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM.DD.YYYY")
+          createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -74,7 +80,8 @@ query SearchQuery {
   allDatoCmsHomearticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
-        articleTitle
+              excerpt
+              articleTitle
         articleCategory
         articleTag
         author
@@ -82,7 +89,7 @@ query SearchQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM.DD.YYYY")
+          createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -106,7 +113,8 @@ query SearchQuery {
   allDatoCmsMobilearticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
-        articleTitle
+              excerpt
+              articleTitle
         articleCategory
         articleTag
         author
@@ -114,7 +122,7 @@ query SearchQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM.DD.YYYY")
+          createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -138,7 +146,8 @@ query SearchQuery {
   allDatoCmsSmartweararticle(filter:{locale:{eq:"pl"}}) {
     edges {
       node {
-        articleTitle
+              excerpt
+              articleTitle
         articleCategory
         articleTag
         author
@@ -146,7 +155,7 @@ query SearchQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM.DD.YYYY")
+          createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -178,14 +187,17 @@ query SearchQuery {
     data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
   }
   queries();
-  const filteredQueryArray = queryArray.filter(item => item.articleTitle.toLowerCase().includes(searchValue) || item.articleTag.includes(searchValue.toLowerCase()));
+  const filteredQueryArray = queryArray.filter(item => item.articleTitle.includes(searchValue.toLowerCase()) || item.articleTag.includes(searchValue.toLowerCase()));
   return (
-    <div>
+    <ArticlePreviewWrapper>
+      {isSearching ? <StyledHeading>Wyszukiwanie: {searchValue}</StyledHeading> : null}
       {isSearching ? filteredQueryArray.map(post =>
-        <ArticlePreviewWrapper>
+        <>
+          {console.log(post)}
           <ArticlePreview
-            isMain
+            main
             key={post.thumbnail.url}
+            excerpt={post.excerpt}
             title={post.articleCategory}
             image={post.mainPhoto.url}
             category={post.articleCategory}
@@ -195,9 +207,9 @@ query SearchQuery {
             picture={post.thumbnail.url}
             slug={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
           />
-        </ArticlePreviewWrapper>
+        </>
       ) : null}
-    </div>
+    </ArticlePreviewWrapper>
   )
 }
 
