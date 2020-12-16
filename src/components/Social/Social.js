@@ -1,5 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../assets/fontAwesome/FontAwesome'
 import { SocialInfo, FontAwesomeIconStyle } from './SocialStyles'
 

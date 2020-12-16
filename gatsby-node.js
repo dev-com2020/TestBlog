@@ -46,13 +46,13 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allDatoCmsHomearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[*+~.()'"!:@,?]/g,
         });
         createPage({
             path: `dom/${slugifiedTitle}`,
             component: homePostTemplate,
             context: {
-                id: post.id
+                id: post.id,
             }
         })
     });
@@ -61,13 +61,13 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allDatoCmsSmartweararticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[*+~.()'"!:@,?]/g,
         });
         createPage({
             path: `smart-wear/${slugifiedTitle}`,
             component: smartPostTemplate,
             context: {
-                id: post.id
+                id: post.id,
             }
         })
     });
@@ -75,13 +75,13 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allDatoCmsGamearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[*+~.()'"!:@,?]/g,
         });
         createPage({
             path: `gry/${slugifiedTitle}`,
             component: gamePostTemplate,
             context: {
-                id: post.id
+                id: post.id,
             }
         })
     });
@@ -89,26 +89,26 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.allDatoCmsMobilearticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[*+~.()'"!:@,?]/g,
         });
         createPage({
             path: `mobile/${slugifiedTitle}`,
             component: mobilePostTemplate,
             context: {
-                id: post.id
+                id: post.id,
             }
         })
     });
     result.data.allDatoCmsComputerarticle.nodes.forEach(post => {
         const slugifiedTitle = slugify(post.articleTitle, {
             lower: true,
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[*+~.()'"!:@,?]/g,
         });
         createPage({
             path: `komputery/${slugifiedTitle}`,
             component: computerPostTemplate,
             context: {
-                id: post.id
+                id: post.id,
             }
         })
     })

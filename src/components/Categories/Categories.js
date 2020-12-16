@@ -19,11 +19,46 @@ const Categories = () => {
             <StyledHeading>KATEGORIE:</StyledHeading>
             <Line />
             <StyledWrapper>
-                <StyledImage as={Link} to='/komputery' src={ComputerImg}> <StyledText>Komputery</StyledText> </StyledImage>
-                <StyledImage as={Link} to='/mobile' src={MobileImg} > <StyledText>Mobile</StyledText> </StyledImage>
-                <StyledImage as={Link} to='/smart-wear' src={SmartImg} > <StyledText>Smart wear</StyledText> </StyledImage>
-                <StyledImage as={Link} to='/dom' src={HomeImg} > <StyledText>Dom</StyledText> </StyledImage>
-                <StyledImage as={Link} to='/gry' src={GameImg} > <StyledText>Gry</StyledText> </StyledImage>
+                <StyledImage
+                    as={Link}
+                    to='/komputery'
+                    src={ComputerImg}>
+                    <StyledText>
+                        Komputery
+                    </StyledText>
+                </StyledImage>
+                <StyledImage
+                    as={Link}
+                    to='/mobile'
+                    src={MobileImg}>
+                    <StyledText>
+                        Mobile
+                        </StyledText>
+                </StyledImage>
+                <StyledImage
+                    as={Link}
+                    to='/smart-wear'
+                    src={SmartImg}>
+                    <StyledText>
+                        Smart wear
+                        </StyledText>
+                </StyledImage>
+                <StyledImage
+                    as={Link}
+                    to='/dom'
+                    src={HomeImg}>
+                    <StyledText>
+                        Dom
+                        </StyledText>
+                </StyledImage>
+                <StyledImage
+                    as={Link}
+                    to='/gry'
+                    src={GameImg}>
+                    <StyledText>
+                        Gry
+                        </StyledText>
+                </StyledImage>
             </StyledWrapper>
 
         </>

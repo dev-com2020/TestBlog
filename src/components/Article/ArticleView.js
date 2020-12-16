@@ -20,7 +20,11 @@ import {
 } from './ArticleViewStyles';
 
 
-const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, content, tags }) => {
+const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, content, tags, id }) => {
+  let disqusConfig = {
+    identifier: id,
+    title,
+  }
   return (
     <ArticleLayout>
       <StyledHeading>
@@ -56,11 +60,11 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
           TAGI:
           {tags}
         </StyledTag>
-        <StyledDisqus className="disqus">
-          <Disqus />
+        <StyledDisqus>
+          <Disqus config={disqusConfig} />
         </StyledDisqus>
       </StyledArticleWrapper>
-      <Headline>Popularne:</Headline>
+      <Headline>Zobacz polecane:</Headline>
       <Line />
       <StyledPopularWrapper>
         <Popular />

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Social from '../Social/Social'
 
 export const PopularContainer = styled.div`
 width: 100%;
@@ -9,12 +8,12 @@ display: flex;
 flex-direction:column;
 align-items:space-between;
 justify-content:space-between;
-@media (min-width: 1010px){
+@media (min-width: 1515px){
     flex-direction:row;
 }
 div {
     display: flex;
-    @media(min-width: 1010px)
+    @media(min-width: 1515px)
     {
         flex-direction: column;
     }
@@ -25,7 +24,7 @@ export const AboutInfo = styled.div`
 padding-left: 1rem;
 display: flex;
 flex-direction: column;
-@media(min-width:1010px){
+@media(min-width:1515px){
     padding-left: 0rem;
 }
 `
@@ -36,7 +35,7 @@ height: 120px;
 margin-top: 20px;
 text-decoration: none;
 color: #fff !important;
-@media (min-width: 1010px){
+@media (min-width: 1515px){
     width: 404px;
     height: 293px;
     display: flex;
@@ -78,7 +77,7 @@ font-size: 1.5rem;
 padding: 0;
 margin: 0;
 text-decoration: none;
-@media (min-width: 1010px){
+@media (min-width: 1515px){
     font-size: 2rem;
 }
 `

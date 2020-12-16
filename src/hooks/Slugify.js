@@ -9,6 +9,7 @@ export const slugify = text => {
         .replace(/ó/g, 'o')
         .replace(/ś/g, 's')
         .replace(/[ź|ż]/g, 'z')
+        .replace(/-/g, '')
         .replace(/ /g, '-')
         .replace(/[^\w-]+/g, '');
 }

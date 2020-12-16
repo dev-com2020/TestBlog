@@ -5,7 +5,7 @@ import {
     StyledHeading,
     StyledFormWrapper,
     StyledInput,
-    StyledButton
+    StyledButton,
 } from './SearchStyles.js';
 
 
@@ -18,6 +18,8 @@ const Search = () => {
     }
     const handleButtonClick = e => {
         e.preventDefault();
+        if (searchValue === "") return;
+        else if (searchValue.length < 3) return;
         setIsSearching(true);
     }
     return (
@@ -30,7 +32,7 @@ const Search = () => {
                 <StyledInput
                     value={searchValue}
                     onChange={handleSearchChange}
-                    placeholder="Wpisz wyszukiwaną frazę"
+                    placeholder="Wpisz słowo kluczowe"
                 />
                 <StyledButton
                     type="submit"

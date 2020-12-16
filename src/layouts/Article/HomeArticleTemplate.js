@@ -15,7 +15,7 @@ query HomesQuery($id: String!) {
         url
       }
       meta {
-        createdAt(formatString:"MM:HH - MM.DD.YYYY")
+        createdAt(formatString:"MM.DD.YYYY")
       }
       mainPhoto {
         url
@@ -49,6 +49,7 @@ const ArticleTemplate = ({ data }) => {
       thumbnail={dates.thumbnail.url}
       content={dates.articleContent}
       tags={dates.articleTag}
+      id={dates.id}
     />
   );
 }

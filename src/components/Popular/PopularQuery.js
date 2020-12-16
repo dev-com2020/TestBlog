@@ -1,26 +1,23 @@
 import React from 'react';
+import { uuid } from 'uuidv4';
 import { graphql, useStaticQuery } from 'gatsby';
 import { slugify } from '../../hooks/Slugify';
-import Social from '../Social/Social'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../assets/fontAwesome/FontAwesome'
 import Avatar from '../Avatar/Avatar';
 import { Link } from 'gatsby';
 
 import {
-    Image,
-    AboutInfo,
-    Category,
-    CategoryName,
-    Favorite,
-    Headline,
-    AuthorInfo
+  Image,
+  AboutInfo,
+  Category,
+  CategoryName,
+  Headline,
 } from './PopularStyles'
 
 const PopularQuery = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
 query PopularQuery {
-  allDatoCmsComputerarticle(filter:{locale:{eq:"pl"}}) {
+  allDatoCmsComputerarticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
     edges {
       node {
               excerpt
@@ -32,7 +29,7 @@ query PopularQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -53,7 +50,7 @@ query PopularQuery {
       }
     }
   }
-  allDatoCmsGamearticle(filter:{locale:{eq:"pl"}}) {
+  allDatoCmsGamearticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
     edges {
       node {
               excerpt
@@ -65,7 +62,7 @@ query PopularQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -86,7 +83,7 @@ query PopularQuery {
       }
     }
   }
-  allDatoCmsHomearticle(filter:{locale:{eq:"pl"}}) {
+  allDatoCmsHomearticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
     edges {
       node {
               excerpt
@@ -98,7 +95,7 @@ query PopularQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -119,7 +116,7 @@ query PopularQuery {
       }
     }
   }
-  allDatoCmsMobilearticle(filter:{locale:{eq:"pl"}}) {
+  allDatoCmsMobilearticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
     edges {
       node {
               excerpt
@@ -131,7 +128,7 @@ query PopularQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -152,7 +149,7 @@ query PopularQuery {
       }
     }
   }
-  allDatoCmsSmartweararticle(filter:{locale:{eq:"pl"}}) {
+  allDatoCmsSmartweararticle(sort:{fields: meta___createdAt, order:DESC},filter:{locale:{eq:"pl"}}) {
     edges {
       node {
               excerpt
@@ -164,7 +161,7 @@ query PopularQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
           url
@@ -187,44 +184,68 @@ query PopularQuery {
   }
 }
 `);
-    const queryArray = [];
-    const queries = () => {
-        data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
-        data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
-        data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
-        data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
-        data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
-    };
-    queries();
-    const filteredQueryArray = queryArray.filter(item => item.articleTag.includes("recenzja"));
+
+  const queryArray = [];
+  const queries = () => {
+    data.allDatoCmsComputerarticle.edges.forEach(item => queryArray.push(item.node));
+    data.allDatoCmsMobilearticle.edges.forEach(item => queryArray.push(item.node));
+    data.allDatoCmsHomearticle.edges.forEach(item => queryArray.push(item.node));
+    data.allDatoCmsSmartweararticle.edges.forEach(item => queryArray.push(item.node));
+    data.allDatoCmsGamearticle.edges.forEach(item => queryArray.push(item.node));
+  };
+
+  queries();
+
+  let renderArray = [];
+  let randomInt = 0;
+  let previousInt = randomInt;
+  for (let i = 0; i <= 2; i++) {
+    do {
+      randomInt = Math.floor(Math.random() * queryArray.length);
+    } while (previousInt === randomInt);
+    let randomQuery = queryArray[randomInt];
+    renderArray.push(randomQuery)
+    previousInt = randomInt;
+  }
+
+  const RenderArticle = (mainPhoto, category, title, thumbnail, data, author,) => {
     return (
-        <>
-            {filteredQueryArray.map(post =>
-                <div className="popular">
-                    <Image src={post.mainPhoto.url} as={Link} to={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}>
-                        <Social />
-                    </Image>
-                    <AboutInfo>
-                        <Category>
-                            <CategoryName>{post.articleCategory}</CategoryName>
-                            <Favorite>
-                                <span>12</span>
-                                <FontAwesomeIcon icon={'heart'} className='icon' color="gray" />
-                            </Favorite>
-                        </Category>
-                        <Headline as={Link} to={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}>{post.articleTitle}</Headline>
-                        <Avatar
-                            isCenter
-                            isPopular
-                            picture={post.thumbnail.url}
-                            date={post.meta.createdAt}
-                            name={post.author}
-                        />
-                    </AboutInfo>
-                </div>
-            )}
-        </>
-    );
+      <div
+        className="popular"
+        key={uuid()}
+      >
+        <Image
+          src={mainPhoto}
+          as={Link}
+          to={`/${slugify(category)}/${slugify(title)}`}>
+        </Image>
+        <AboutInfo>
+          <Category>
+            <CategoryName>{category}</CategoryName>
+          </Category>
+          <Headline
+            as={Link}
+            to={`/${slugify(category)}/${slugify(title)}`}>
+            {title.slice(0, 23) + "..."}
+          </Headline>
+          <Avatar
+            isCenter
+            isPopular
+            picture={thumbnail}
+            date={data}
+            name={author}
+          />
+        </AboutInfo>
+      </div>
+    )
+  }
+  return (
+    <>
+      {renderArray.map(post =>
+        RenderArticle(post.mainPhoto.url, post.articleCategory, post.articleTitle, post.thumbnail.url, post.meta.createdAt, post.author)
+      )}
+    </>
+  );
 }
 
 export default PopularQuery;

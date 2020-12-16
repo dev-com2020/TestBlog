@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'TechBlog',
@@ -7,21 +9,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-fontawesome-css`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: 'Roboto Condensed',
-            variants: [`300`, `400`, `700`]
-          }
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: 'Roboto Condensed',
+    //         variants: [`300`, `400`, `700`]
+    //       }
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: "bba2a004263ce83f662dbb2c462345",
+        apiToken: process.env.API_DATO_CMS,
       },
     },
     {
@@ -45,6 +47,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-sharp`,
   ],
 };

@@ -15,7 +15,7 @@ query MobilesQuery($id: String!) {
         url
       }
       meta {
-        createdAt(formatString:"MM:HH - MM.DD.YYYY")
+        createdAt(formatString:"MM.DD.YYYY")
       }
       mainPhoto {
         url
@@ -48,6 +48,7 @@ const ArticleTemplate = ({ data }) => {
       date={dates.meta.createdAt}
       thumbnail={dates.thumbnail.url}
       content={dates.articleContent}
+      id={dates.id}
       tags={dates.articleTag}
     />
   );

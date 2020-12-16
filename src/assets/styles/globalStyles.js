@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 *,
 *::before,
 *::after {
@@ -33,13 +34,6 @@ html {
 }
 .line__span {
     background-color:${props => props.theme.mode === 'dark' ? "lightgray" : "#0B1026"}
-}
-.disqus {
-/* background-color: #313958; */
-background-color:${props => props.theme.mode === 'dark' ? "#313958" : "#fff"};
-a, abbr, acronym, address, blockquote, button, caption, cite, code, dd, del, dfn, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, img, label, legend, li, ol, p, pre, q, s, samp, small, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
-color:${props => props.theme.mode === 'dark' ? "#fff" : "black"} !important;
-}
 }
 `;
 

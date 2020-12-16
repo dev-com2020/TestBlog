@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from "gatsby-image"
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { FooterBox, FooterContainer, BlogInfo, SocialMedia, Logo, StyledLink } from './FooterStyles'
 
 const Footer = () => {
@@ -25,7 +25,8 @@ const Footer = () => {
             <FooterBox>
                 <BlogInfo>
                     <h2>TESTBLOG.INFO</h2>
-                    <StyledLink to={'/'}>Nasz Zespoł</StyledLink>
+                    <StyledLink
+                        to={'/'}>Nasz Zespoł</StyledLink>
                     <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
                     <StyledLink to={'/'}>Regulamin</StyledLink>
                     <StyledLink to={'/'}>Polityka prywatności</StyledLink>

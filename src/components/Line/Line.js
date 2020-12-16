@@ -13,18 +13,9 @@ position:relative;
     height:4px;
     width: 5%;
     left:0;
-    /* background-color: #0B1026; */
 }
 `;
 
 const Line = () => <StyledLine className="line"><span className="line__span" /></StyledLine>
 
 export default Line;
-
-
-/*
-
-line: $192246
-
-span: lightgray
-*/

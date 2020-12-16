@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 margin-top: 100px;
-@media(max-width:1024px) {
+@media(max-width:1210px) {
 width: 100%;
 }
 `;
@@ -63,7 +63,6 @@ font-weight:700;
 export const StyledButton = styled.button`
 width:55%;
 margin:35px auto auto;
-background-color: #0B122D;
 border:none;
 padding: 15px;
 font-size:1.8rem;

@@ -21,7 +21,7 @@ justify-self: left;
 const PopularPosts = () => {
     return (
         <>
-            <Headline>POPULARNE:</Headline>
+            <Headline>PROPOZYCJE:</Headline>
             <Div>
                 <Line />
                 <Popular />

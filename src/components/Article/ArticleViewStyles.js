@@ -66,6 +66,7 @@ font-weight: 300;
 export const StyledDisqus = styled.div`
 width:100%;
 padding: 50px;
+background-color:#313958;
 `;
 
 export const ArticleLayout = styled(MainLayout)`
@@ -82,7 +83,11 @@ justify-content:space-between;
 `;
 export const Headline = styled.h2`
 padding-top: 2rem;
-font-size: 20px;
+font-size: 7.1rem;
 font-weight: bold;
 justify-self: left;
+text-transform:uppercase;
+@media(max-width:1460px) {
+    font-size:3rem;
+}
 `

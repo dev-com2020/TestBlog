@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-width: 50vw;
+width: 40vw;
 margin: 75px auto;
 justify-content:center;
 align-items:center;
@@ -19,4 +19,10 @@ font-weight:700;
 @media(max-width:1024px) {
     font-size:4rem;
 }
+`;
+export const StyledButton = styled.p`
+font-size: 3rem;
+font-weight:bold;
+justify-self:center;
+cursor:pointer;
 `;

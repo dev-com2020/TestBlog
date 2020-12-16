@@ -51,8 +51,9 @@ text-decoration: none;
 export const StyledImg = styled.div`
 position:relative;
 left:20px;
-background: url(${({ src }) => src});
+background: url(${({ src }) => src}) no-repeat;
 background-size:cover;
+background-position:center;
 width:${({ main }) => main ? "100%" : "20%"};
 height:${({ main }) => main ? "400px" : "100%"};
 @media(max-width:1366px) {
