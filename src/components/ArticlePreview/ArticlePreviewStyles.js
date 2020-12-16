@@ -19,7 +19,7 @@ align-items:flex-start;
 justify-content: flex-start;
 padding-left: 50px;
 text-align:left;
-width: ${({ theme }) => theme ? "80%" : "100%"};
+width: ${({ theme }) => theme ? "100%" : "100%"};
 @media(min-width:1024px) {
     text-align:left;
     margin-left:${({ main }) => main ? "-25px" : null};
@@ -57,7 +57,9 @@ background-position:center;
 width:${({ main }) => main ? "100%" : "20%"};
 height:${({ main }) => main ? "400px" : "100%"};
 @media(max-width:1366px) {
-    width:${({ main }) => main ? null : "30%"};
+    width:${({ main }) => main ? "30%" : "30%"};
+height:${({ main }) => main ? "300px" : "100%"};
+
 }
 @media(max-width:1024px)
 {

@@ -9,7 +9,7 @@ display:flex;
 flex-direction:column;
 grid-gap: 80px;
 @media(max-width:1024px) {
-    width:100vw;
+    width:80vw;
 }
 `;
 
@@ -19,10 +19,4 @@ font-weight:700;
 @media(max-width:1024px) {
     font-size:4rem;
 }
-`;
-export const StyledButton = styled.p`
-font-size: 3rem;
-font-weight:bold;
-justify-self:center;
-cursor:pointer;
 `;

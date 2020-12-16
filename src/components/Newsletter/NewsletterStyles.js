@@ -43,7 +43,6 @@ align-items:center;
 export const StyledCheckboxLabel = styled.label`
 width:60%;
 margin-top: 30px;
-margin-left:50px;
 font-size:1.2rem;
 `;
 export const StyledCheckboxInput = styled.input`

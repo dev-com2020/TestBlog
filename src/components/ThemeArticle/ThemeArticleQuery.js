@@ -193,8 +193,8 @@ query ThemeArticleQuery {
     <>
       {renderArticles.map(post =>
         <ArticlePreview
-          main
           theme
+          main
           key={uuid()}
           excerpt={post.excerpt}
           title={post.articleCategory}

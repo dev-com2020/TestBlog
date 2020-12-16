@@ -140,7 +140,6 @@ const LattestQuery = () => {
     <ArticlePreviewWrapper>
       {categories.map(post => (
         <ArticlePreview
-          main
           index
           excerpt={post.excerpt}
           key={uuid()}
