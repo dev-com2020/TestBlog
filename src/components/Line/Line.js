@@ -16,6 +16,10 @@ position:relative;
 }
 `;
 
-const Line = () => <StyledLine className="line"><span className="line__span" /></StyledLine>
+const Line = () => {
+    return (
+        <StyledLine className="line"><span className="line__span" /></StyledLine>
+    )
+}
 
 export default Line;

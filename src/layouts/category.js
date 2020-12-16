@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import { uuid } from 'uuidv4';
 import styled from 'styled-components';
 import MainLayout from './index';
-import Line from '../components/Line/Line';
 import ArticlePreview from '../components/ArticlePreview/ArticlePreview';
 import { slugify } from '../hooks/Slugify';
 import Popular from '../components/Popular/Popular';
+const Line = styled.div`
+height:4px;
+width:100%;
+background-color:lightgray;
+border-radius: 4px;
+overflow:hidden;
+position:relative;
+& span {
+    position:absolute;
+    height:4px;
+    width: 5%;
+    left:0;
+}
+`;
 
 
 const StyledHeading = styled.h2`

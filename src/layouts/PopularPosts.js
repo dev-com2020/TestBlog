@@ -1,7 +1,20 @@
 import React from 'react'
 import Popular from '../components/Popular/Popular'
 import styled from 'styled-components'
-import Line from '../components/Line/Line'
+const Line = styled.div`
+height:4px;
+width:100%;
+background-color:lightgray;
+border-radius: 4px;
+overflow:hidden;
+position:relative;
+& span {
+    position:absolute;
+    height:4px;
+    width: 5%;
+    left:0;
+}
+`;
 const Div = styled.div`
 
 display: flex;

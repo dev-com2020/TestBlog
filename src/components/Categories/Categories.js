@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Line from '../Line/Line';
+import styled from 'styled-components';
 import ComputerImg from '../../assets/img/komputery.png';
 import MobileImg from '../../assets/img/mobile.png';
 import SmartImg from '../../assets/img/smart-wear.png';
@@ -12,7 +12,20 @@ import {
     StyledImage,
     StyledText
 } from './CategoriesStyles';
-
+const Line = styled.div`
+height:4px;
+width:100%;
+background-color:lightgray;
+border-radius: 4px;
+overflow:hidden;
+position:relative;
+& span {
+    position:absolute;
+    height:4px;
+    width: 5%;
+    left:0;
+}
+`;
 const Categories = () => {
     return (
         <>

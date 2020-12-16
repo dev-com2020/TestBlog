@@ -1,8 +1,8 @@
 import React from 'react';
-import Line from '../Line/line';
 import Avatar from '../Avatar/Avatar';
 import { Disqus } from 'gatsby-plugin-disqus';
 import Popular from '../Popular/Popular';
+import styled from 'styled-components';
 
 import {
   StyledHeading,
@@ -19,6 +19,20 @@ import {
   Headline,
 } from './ArticleViewStyles';
 
+const Line = styled.div`
+height:4px;
+width:100%;
+background-color:lightgray;
+border-radius: 4px;
+overflow:hidden;
+position:relative;
+& span {
+    position:absolute;
+    height:4px;
+    width: 5%;
+    left:0;
+}
+`;
 
 const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, content, tags, id }) => {
   let disqusConfig = {
