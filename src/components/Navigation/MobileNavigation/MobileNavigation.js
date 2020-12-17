@@ -6,6 +6,7 @@ import {
     StyledItem,
     StyledLink,
     StyledImg,
+    StyledHeading,
 } from './MobileNavigationStyles';
 import Burger from '../Burger/Burger';
 import Search from '../../../assets/svg/Search.svg';
@@ -23,6 +24,7 @@ const MobileNavigation = () => {
     }
     return (
         <StyledNav>
+            <StyledHeading>Testblog.info</StyledHeading>
             <Burger handleclick={handleBurgerClick} isOpen={isOpen} />
             <StyledListWrapper open={isOpen}>
                 <StyledList>

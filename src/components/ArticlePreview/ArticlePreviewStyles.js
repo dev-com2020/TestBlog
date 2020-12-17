@@ -22,13 +22,16 @@ align-items:flex-start;
 justify-content: flex-start;
 padding-left: 50px;
 text-align:left;
-width: ${({ theme }) => theme ? "100%" : "100%"};
 @media(min-width:1024px) {
     text-align:left;
     margin-left:${({ main }) => main ? "-25px" : null};
 }
+@media(max-width:1020px) {
+    width: ${({ theme }) => theme ? "70%" : "100%"};
+}
 @media(max-width:1024px) {
     padding-left: 20px;
+    width: ${({ lattest }) => lattest ? "100%" : null};
 }
 `;
 export const StyledParagraph = styled.p`
@@ -65,7 +68,7 @@ height:${({ main }) => main ? "300px" : "100%"};
 }
 @media(max-width:1024px)
 {
-    width: ${({ main }) => main ? "100%" : "60%"};
+    width: ${({ main }) => main ? "70%" : "60%"};
     height: ${({ main }) => main ? null : "300px"};
 }
 @media(max-width:655px) {

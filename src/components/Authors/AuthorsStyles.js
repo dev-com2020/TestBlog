@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 export const StyledWrapper = styled.div`
 width:450px;
 display:flex;
@@ -13,7 +14,7 @@ export const StyledHeading = styled.h2`
 font-size: 2rem;
 font-weight:700;
 `;
-export const StyledImg = styled.img`
+export const StyledImg = styled(Img)`
 width: 348px;
 height:324px;
 margin-top: 25px;

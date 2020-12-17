@@ -210,6 +210,7 @@ query SearchQuery {
       {isSearching ? filteredQueryArray.map(post =>
         <ArticlePreview
           main
+          theme
           key={uuid()}
           excerpt={post.excerpt}
           title={post.articleCategory}

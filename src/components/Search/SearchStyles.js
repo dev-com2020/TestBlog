@@ -18,6 +18,9 @@ height: 70px;
 margin-top: 25px;
 font-size:3rem;
 padding:15px;
+@media(max-width:800px) {
+    font-size: 2rem;
+}
 `;
 export const StyledButton = styled.button`
 width: 250px;

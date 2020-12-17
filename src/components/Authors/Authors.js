@@ -33,7 +33,9 @@ const Authors = () => {
               authorName
               authorDescription
               authorPicture {
-                url
+                fluid {
+                  ...GatsbyDatoCmsFluid
+                }
               }
             }
           }
@@ -50,7 +52,7 @@ const Authors = () => {
       </StyledHeading>
       <Line />
       <StyledImg
-        src={authorPicture.url}
+        fluid={authorPicture.fluid}
         alt="michal test"
       />
       <StyledHeading>{authorName}</StyledHeading>

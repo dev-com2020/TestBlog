@@ -152,6 +152,7 @@ const LattestQuery = () => {
         <ArticlePreview
           index
           main
+          lattest
           excerpt={post.excerpt}
           key={uuid()}
           title={post.articleCategory}

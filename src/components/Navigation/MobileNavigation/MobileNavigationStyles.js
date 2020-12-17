@@ -51,3 +51,7 @@ position:absolute;
 right:-30px;
 top:3px;
 `;
+
+export const StyledHeading = styled.h2`
+color: #fff !important;
+`;
