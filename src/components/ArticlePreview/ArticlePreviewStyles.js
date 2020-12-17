@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Avatar from '../Avatar/Avatar';
+import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 
 export const StyledArticle = styled.div`
 display:flex;
@@ -7,6 +9,7 @@ justify-content: flex-start;
 align-items:${({ main }) => main ? "flex-start" : "center"};
 position:relative;
 flex-direction: ${({ main }) => main ? 'column' : 'row'};
+text-decoration:none;
 @media(max-width:1024px) {
     flex-direction:column;
     align-items:flex-start;
@@ -48,29 +51,27 @@ text-decoration: none;
     font-size:2.2rem;
 }
 `;
-export const StyledImg = styled.div`
+export const StyledImg = styled(Img)`
 position:relative;
 left:20px;
-background: url(${({ src }) => src}) no-repeat;
 background-size:cover;
 background-position:center;
-width:${({ main }) => main ? "100%" : "20%"};
+width:${({ main }) => main ? "100%" : "30%"};
 height:${({ main }) => main ? "400px" : "100%"};
-@media(max-width:1366px) {
-    width:${({ main }) => main ? "30%" : "30%"};
-height:${({ main }) => main ? "300px" : "100%"};
 
+@media(max-width:1366px) {
+    width:${({ theme }) => theme ? "100%" : "30%"};
+height:${({ main }) => main ? "300px" : "100%"};
 }
 @media(max-width:1024px)
 {
-    width: ${({ main }) => main ? "125%" : "60%"};
+    width: ${({ main }) => main ? "100%" : "60%"};
     height: ${({ main }) => main ? null : "300px"};
 }
 @media(max-width:655px) {
     width:${({ index }) => index ? "125%" : "75%"};
     height:${({ main }) => main ? null : "150px"};
 }
-
 `;
 export const StyledAvatar = styled(Avatar)`
 @media(max-width:1024px){

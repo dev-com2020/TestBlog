@@ -40,11 +40,18 @@ width:300px;
 export const StyledLink = styled(Link)`
 font-weight:300;
 font-size:2rem;
-color:white !important;
+color:#ddd !important;
 text-decoration:none;
-display:block;
+transition: 0.2s;
 &.active {
     color:#7EE5FF !important;
+}
+&:hover {
+    text-shadow: 0px 0px 20px #FFF;
+    color: #fff !important;
+    &.active {
+        color: #7EE5FF !important;
+    }
 }
 `;
 export const StyledSearch = styled.div`

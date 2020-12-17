@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Img from 'gatsby-image';
 
 export const PopularContainer = styled.div`
 width: 100%;
@@ -29,7 +30,7 @@ flex-direction: column;
 }
 `
 
-export const Image = styled.div`
+export const Image = styled(Img)`
 width: 180px;
 height: 120px;
 margin-top: 20px;

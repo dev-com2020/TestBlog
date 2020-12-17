@@ -4,7 +4,7 @@ width:450px;
 display:flex;
 flex-direction:column;
 align-items:center;
-@media(max-width:1210px) {
+@media(max-width:1650px) {
     width:100%;
 align-items:center;
 }

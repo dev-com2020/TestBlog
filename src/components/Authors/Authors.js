@@ -42,7 +42,7 @@ const Authors = () => {
     `);
   const { authorName, authorDescription, authorPicture } = data.allDatoCmsAboutt.edges[0].node;
   const [isMobile, setIsMobile] = useState(false);
-  IsMobileHook(setIsMobile, 1210);
+  IsMobileHook(setIsMobile, 1650);
   return (
     <StyledWrapper>
       <StyledHeading>

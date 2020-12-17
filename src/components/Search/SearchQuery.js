@@ -26,8 +26,10 @@ query SearchQuery {
           createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -59,8 +61,10 @@ query SearchQuery {
           createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -92,8 +96,10 @@ query SearchQuery {
           createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -125,8 +131,10 @@ query SearchQuery {
           createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -158,8 +166,10 @@ query SearchQuery {
           createdAt(formatString:"MM:HH - MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -203,7 +213,7 @@ query SearchQuery {
           key={uuid()}
           excerpt={post.excerpt}
           title={post.articleCategory}
-          image={post.mainPhoto.url}
+          image={post.mainPhoto.fluid}
           category={post.articleCategory}
           heading={post.articleTitle}
           name={post.author}

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 import MainLayout from '../../layouts/index';
+import Img from 'gatsby-image';
 
 export const StyledHeading = styled.h2`
-font-size: 7rem;
+font-size: 5rem;
 font-weight: 700;
 @media(max-width:800px) {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 `;
 export const StyledCategoryHeading = styled.p`
-font-size: 2rem;
+font-size: 1.6rem;
 font-weight:700;
 `;
-export const StyledImg = styled.img`
+export const StyledImg = styled(Img)`
 margin-bottom: 25px;
 width:100%;
 align-self:center;
@@ -20,25 +21,25 @@ align-self:center;
 }
 `;
 export const StyledArticleHeading = styled.p`
-font-size: 3.5rem;
+font-size: 2.8rem;
 font-weight: 700;
 @media(max-width:800px) {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 }
 `;
 export const StyledArticleParagraph = styled.p`
-font-size: 2.5rem;
+font-size: 2.2rem;
 @media(max-width:800px) {
-    font-size:2rem;
+    font-size:1.8rem;
 }
 `;
-export const StyledArticleImg = styled.img`
+export const StyledArticleImg = styled(Img)`
 margin-top: 50px;
 margin-bottom: 50px;
 margin-left: auto;
 margin-right:auto;
-max-width:100%;
-max-height: 1000px;
+min-width:100%;
+min-height:100%;
 `;
 export const StyledArticleWrapper = styled.div`
 display:flex;

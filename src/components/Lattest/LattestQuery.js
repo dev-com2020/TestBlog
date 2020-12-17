@@ -14,10 +14,12 @@ const LattestQuery = () => {
               author
               excerpt
               mainPhoto {
-                  url
-              }
+                fluid(maxWidth: 1000, maxHeight:800) {
+                  ...GatsbyDatoCmsFluid
+                }
+               }
               meta {
-                createdAt(formatString:"MM:HH - MM.DD.YYYY")
+                createdAt(formatString:"MM.DD.YYYY")
               }
               thumbnail {
                   url
@@ -37,11 +39,13 @@ const LattestQuery = () => {
             node {
                 author
               excerpt
-                mainPhoto {
-                    url
+              mainPhoto {
+                fluid {
+                  ...GatsbyDatoCmsFluid_tracedSVG
                 }
+               }
                 meta {
-                    createdAt(formatString:"MM:HH - MM.DD.YYYY")
+                    createdAt(formatString:"MM.DD.YYYY")
                 }
                 thumbnail {
                     url
@@ -61,11 +65,13 @@ const LattestQuery = () => {
             node {
               excerpt
               author
-                mainPhoto {
-                    url
+              mainPhoto {
+                fluid {
+                  ...GatsbyDatoCmsFluid_tracedSVG
                 }
+               }
                 meta {
-                    createdAt(formatString:"MM:HH - MM.DD.YYYY")
+                  createdAt(formatString:"MM.DD.YYYY")
                 }
                 thumbnail {
                     url
@@ -85,11 +91,13 @@ const LattestQuery = () => {
             node {
               excerpt
               author
-                mainPhoto {
-                    url
+              mainPhoto {
+                fluid {
+                  ...GatsbyDatoCmsFluid_tracedSVG
                 }
+               }
                 meta {
-                    createdAt(formatString:"MM:HH - MM.DD.YYYY")
+                  createdAt(formatString:"MM.DD.YYYY")
                 }
                 thumbnail {
                     url
@@ -109,11 +117,13 @@ const LattestQuery = () => {
             node {
               excerpt
               author
-                mainPhoto {
-                    url
+              mainPhoto {
+                fluid {
+                  ...GatsbyDatoCmsFluid_tracedSVG
                 }
+               }
                 meta {
-                    createdAt(formatString:"MM:HH - MM.DD.YYYY")
+                  createdAt(formatString:"MM.DD.YYYY")
                 }
                 thumbnail {
                     url
@@ -141,10 +151,11 @@ const LattestQuery = () => {
       {categories.map(post => (
         <ArticlePreview
           index
+          main
           excerpt={post.excerpt}
           key={uuid()}
           title={post.articleCategory}
-          image={post.mainPhoto.url}
+          image={post.mainPhoto.fluid}
           category={post.articleCategory}
           heading={post.articleTitle}
           name={post.author}

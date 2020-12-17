@@ -14,7 +14,7 @@ margin:30px auto 0;
 display:flex;
 justify-content:space-between;
 overflow:hidden;
-@media (max-width:1210px) {
+@media (max-width:1650px) {
   flex-wrap:wrap;
 }
 `;
@@ -30,7 +30,7 @@ overflow:hidden;
 `;
 const IndexPage = () => {
   const [isMobile, setIsMobile] = useState(false);
-  IsMobileHook(setIsMobile, 1210);
+  IsMobileHook(setIsMobile, 1650);
   return (
     <MainLayout isBaner isCategory>
       <StyledWrapper>

@@ -22,11 +22,11 @@ position:relative;
 
 
 const StyledHeading = styled.h2`
-font-size:7.1rem;
+font-size:5rem;
 font-weight:bold;
 text-transform:uppercase;
 @media(max-width:1024px) {
-    font-size:4rem;
+    font-size:3rem;
 }
 `;
 const StyledArticlesWrapper = styled.div`
@@ -91,7 +91,7 @@ const CategoryLayout = ({ dates, title }) => {
                             key={uuid()}
                             excerpt={info.excerpt}
                             title={info.articleCategory}
-                            image={info.mainPhoto.url}
+                            image={info.mainPhoto.fluid}
                             category={info.articleCategory}
                             heading={info.articleTitle}
                             name={info.author}

@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 margin-top: 100px;
-@media(max-width:1210px) {
+@media(max-width:1650px) {
 width: 100%;
 }
 `;

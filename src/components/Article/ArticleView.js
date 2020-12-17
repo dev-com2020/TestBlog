@@ -49,7 +49,7 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
         {category}
       </StyledCategoryHeading>
       <StyledArticleWrapper>
-        <StyledImg src={mainPhoto} />
+        <StyledImg fluid={mainPhoto} />
         <Avatar
           name={author}
           date={date}
@@ -62,7 +62,7 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
             case 'heading':
               return (<StyledArticleHeading key={randomInt}>{item.heading}</StyledArticleHeading>)
             case 'picture':
-              return (<StyledArticleImg key={randomInt} src={item.picture.url} />)
+              return (<StyledArticleImg key={randomInt} fluid={item.picture.fluid} />)
             case 'paragraph':
               return (<StyledArticleParagraph key={randomInt}>{item.paragraph}</StyledArticleParagraph>)
             default:

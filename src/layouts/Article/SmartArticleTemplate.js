@@ -17,15 +17,19 @@ query SmartsQuery($id: String!) {
         createdAt(formatString:"MM.DD.YYYY")
       }
       mainPhoto {
-        url
-      }
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
+       }
       articleContent {
         ... on DatoCmsArticleHeading {
           heading
         }
         ... on DatoCmsArticlePicture {
           picture {
-            url
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
           }
         }
         ... on DatoCmsArticleParagraph {
@@ -42,7 +46,7 @@ const ArticleTemplate = ({ data }) => {
     <ArticleView
       title={dates.articleTitle}
       category={dates.articleCategory}
-      mainPhoto={dates.mainPhoto.url}
+      mainPhoto={dates.mainPhoto.fluid}
       author={dates.author}
       date={dates.meta.createdAt}
       thumbnail={dates.thumbnail.url}

@@ -1,30 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 
 const StyledWrapper = styled.div`
 height: 392px;
 width: 100vw;
-background: url(${({ src }) => src});
+background-size: cover;
+background-repeat: no-repeat;
+background-position:left;
+@media(min-width:2100px) {
+  height: 500px;
+}
 `;
 
 const Baner = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query Banner {
         file(name:{eq: "Banner"}){
         childImageSharp {
-          fluid(maxWidth:1920, maxHeight:392) {
+          fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
           }
         }
         }
       }
     `);
-    return (
-        <StyledWrapper as={Image} fluid={data.file.childImageSharp.fluid}>
-        </StyledWrapper>
-    )
+  return (
+    <StyledWrapper as={BackgroundImage} fluid={data.file.childImageSharp.fluid}>
+    </StyledWrapper>
+  )
 }
 
 export default Baner;

@@ -19,11 +19,13 @@ query ThemeArticleQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -52,11 +54,13 @@ query ThemeArticleQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -85,11 +89,13 @@ query ThemeArticleQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -118,11 +124,13 @@ query ThemeArticleQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -151,11 +159,13 @@ query ThemeArticleQuery {
           url
         }
         meta {
-          createdAt(formatString:"MM:HH - MM.DD.YYYY")
+          createdAt(formatString:"MM.DD.YYYY")
         }
         mainPhoto {
-          url
-        }
+          fluid(maxWidth: 1000, maxHeight:800) {
+            ...GatsbyDatoCmsFluid
+          }
+         }
         articleContent {
           ... on DatoCmsArticleHeading {
             heading
@@ -198,7 +208,7 @@ query ThemeArticleQuery {
           key={uuid()}
           excerpt={post.excerpt}
           title={post.articleCategory}
-          image={post.mainPhoto.url}
+          image={post.mainPhoto.fluid}
           category={post.articleCategory}
           heading={post.articleTitle}
           name={post.author}

@@ -16,11 +16,10 @@ body {
     overflow-x:hidden;
     padding-top: 68px;
     background-color: ${props => props.theme.mode === 'dark' ? '#0B1026' : '#fff'} !important;
-    color: ${props => props.theme.mode === 'dark' ? '#fff' : '#0B1026'} !important;
+    color: ${props => props.theme.mode === 'dark' ? '#bbb' : '#0B1026'} !important;
     a {
-    color: ${props => props.theme.mode === 'dark' ? '#fff' : '#0B1026'} !important;
+    color: ${props => props.theme.mode === 'dark' ? '#bbb' : '#0B1026'} !important;
     }
-        /* transition: color, background-color 0.5s linear; */
 }
 html {
     font-size:62.5%;
