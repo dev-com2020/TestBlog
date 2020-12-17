@@ -16,7 +16,7 @@ margin: 80px auto auto;
 
 const MainLayout = ({ children, isBaner, isCategory }) => {
     const theme = useTheme();
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(null);
     IsMobileHook(setIsMobile, 1076);
 
     const BanerChecked = (isBaner) => {
