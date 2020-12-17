@@ -1,7 +1,5 @@
 import React from 'react';
 import NewsletterImg from '../../assets/img/newsletter.png';
-import styled from 'styled-components'
-
 import {
     StyledWrapper,
     StyledHeading,
@@ -15,20 +13,8 @@ import {
     StyledInputLabel,
     StyledButton,
 } from './NewsletterStyles';
-const Line = styled.div`
-height:4px;
-width:100%;
-background-color:lightgray;
-border-radius: 4px;
-overflow:hidden;
-position:relative;
-& span {
-    position:absolute;
-    height:4px;
-    width: 5%;
-    left:0;
-}
-`;
+import { Line } from '../Line/Line';
+
 const Newsletter = () => {
     return (
         <StyledWrapper>

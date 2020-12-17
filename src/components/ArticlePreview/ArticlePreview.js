@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-import BackgroundImage from 'gatsby-background-image';
 import {
     StyledArticleTexts,
     StyledParagraph,
@@ -11,7 +9,6 @@ import {
     StyledArticle,
     StyledExcerpt
 } from './ArticlePreviewStyles';
-import styled from 'styled-components';
 const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt, theme, lattest }) => {
     return (
         <StyledArticle main={main} as={Link} to={slug}>

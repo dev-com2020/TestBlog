@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Avatar from '../Avatar/Avatar';
-import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 
 export const StyledArticle = styled.div`

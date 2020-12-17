@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
 import Newsletter from '../Newsletter/Newsletter';
 import IsMobileHook from '../../hooks/IsMobileHook';
+import { Line } from '../Line/Line';
 
 import {
   StyledWrapper,
@@ -10,20 +10,6 @@ import {
   StyledImg,
   StyledParagraph,
 } from './AuthorsStyles';
-const Line = styled.div`
-height:4px;
-width:100%;
-background-color:lightgray;
-border-radius: 4px;
-overflow:hidden;
-position:relative;
-& span {
-    position:absolute;
-    height:4px;
-    width: 5%;
-    left:0;
-}
-`;
 const Authors = () => {
   const data = useStaticQuery(graphql`
     query Authors {

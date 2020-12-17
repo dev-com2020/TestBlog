@@ -29,9 +29,19 @@ html {
     color: white !important;
 }
 .line {
+    height:4px;
+width:100%;
+background-color:lightgray;
+border-radius: 4px;
+overflow:hidden;
+position:relative;
     background-color:${props => props.theme.mode === 'dark' ? "#192246" : "lightgray"};
 }
 .line__span {
+    position:absolute;
+    height:4px;
+    width: 5%;
+    left:0;
     background-color:${props => props.theme.mode === 'dark' ? "lightgray" : "#0B1026"}
 }
 `;
