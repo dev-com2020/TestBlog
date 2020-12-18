@@ -28,7 +28,7 @@ query MobileInfo {
   }
 `;
 
-const IndexPage = ({ data }) => {
+const MobilePage = ({ data }) => {
   const dates = data.allDatoCmsMobilearticle.edges;
 
   return (
@@ -36,4 +36,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default MobilePage;

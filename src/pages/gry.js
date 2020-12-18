@@ -28,7 +28,7 @@ query GameInfo {
   }
 `;
 
-const IndexPage = ({ data }) => {
+const GamePage = ({ data }) => {
   const dates = data.allDatoCmsGamearticle.edges;
 
   return (
@@ -36,4 +36,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default GamePage;

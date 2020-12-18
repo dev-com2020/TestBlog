@@ -29,7 +29,7 @@ query ComputerInfo {
   }
 `;
 
-const IndexPage = ({ data }) => {
+const ComputerPage = ({ data }) => {
   const dates = data.allDatoCmsComputerarticle.edges;
   return (
     <CategoryLayout title={dates[0].node.articleCategory} dates={dates}>
@@ -38,4 +38,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default ComputerPage;

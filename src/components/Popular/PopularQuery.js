@@ -197,15 +197,10 @@ query PopularQuery {
   queries();
 
   let renderArray = [];
-  let randomInt = 0;
-  let previousInt = randomInt;
   for (let i = 0; i <= 2; i++) {
-    do {
-      randomInt = Math.floor(Math.random() * queryArray.length);
-    } while (previousInt === randomInt);
+    const randomInt = Math.floor(Math.random() * queryArray.length);
     let randomQuery = queryArray[randomInt];
     renderArray.push(randomQuery)
-    previousInt = randomInt;
   }
 
   const RenderArticle = (mainPhoto, category, title, thumbnail, data, author,) => {

@@ -28,7 +28,7 @@ query SmartInfo {
   }
 `;
 
-const IndexPage = ({ data }) => {
+const SmartPage = ({ data }) => {
   const dates = data.allDatoCmsSmartweararticle.edges;
 
   return (
@@ -36,4 +36,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default SmartPage;

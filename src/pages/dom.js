@@ -28,7 +28,7 @@ query HomeInfo {
   }
 `;
 
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const dates = data.allDatoCmsHomearticle.edges;
 
   return (
@@ -36,4 +36,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default HomePage;

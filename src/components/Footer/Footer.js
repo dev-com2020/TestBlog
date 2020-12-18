@@ -26,7 +26,7 @@ const Footer = () => {
                 <BlogInfo>
                     <h2>TESTBLOG.INFO</h2>
                     <StyledLink
-                        to={'/'}>Nasz Zespoł</StyledLink>
+                        to={'/zespol'}>Nasz Zespoł</StyledLink>
                     <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
                     <StyledLink to={'/'}>Regulamin</StyledLink>
                     <StyledLink to={'/'}>Polityka prywatności</StyledLink>
