@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 *,
@@ -21,13 +20,16 @@ body {
     color: ${props => props.theme.mode === 'dark' ? '#bbb' : '#0B1026'} !important;
     }
 }
+
 html {
     font-size:62.5%;
 }
+
 .submit {
     background-color: ${props => props.theme.mode === 'dark' ? "#9400F6" : "#0B122D"};
     color: white !important;
 }
+
 .line {
     height:4px;
 width:100%;
@@ -37,6 +39,7 @@ overflow:hidden;
 position:relative;
     background-color:${props => props.theme.mode === 'dark' ? "#192246" : "lightgray"};
 }
+
 .line__span {
     position:absolute;
     height:4px;

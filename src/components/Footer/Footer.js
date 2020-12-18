@@ -42,7 +42,6 @@ const Footer = () => {
                 <Logo>
                     <Img
                         fixed={data.image.childImageSharp.fixed}
-                    // fluid={data.image.childImageSharp.fluid}
                     />
                 </Logo>
             </FooterBox>

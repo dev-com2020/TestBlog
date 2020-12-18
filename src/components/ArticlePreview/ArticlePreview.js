@@ -12,7 +12,6 @@ import {
 const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt, theme, lattest }) => {
     return (
         <StyledArticle main={main} as={Link} to={slug}>
-            {console.log(image)}
             <StyledImg fluid={image} main={main} index={index} />
             <StyledArticleTexts theme={theme} main={main} lattest={lattest}>
                 <StyledParagraph >{category}</StyledParagraph>
