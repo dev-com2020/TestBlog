@@ -8,6 +8,7 @@ import {
     StyledImg,
     StyledHeading,
     StyledLogoImg,
+    StyledLogoWrapper,
 } from './MobileNavigationStyles';
 import Burger from '../Burger/Burger';
 import Search from '../../../assets/svg/Search.svg';
@@ -25,7 +26,7 @@ const MobileNavigation = () => {
                 }
               }
             }
-          }
+        }
     `)
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +40,6 @@ const MobileNavigation = () => {
     return (
         <>
             <StyledNav>
-                {console.log(data)}
                 <StyledHeading></StyledHeading>
                 <Burger handleclick={handleBurgerClick} isOpen={isOpen} />
                 <StyledListWrapper open={isOpen}>
@@ -109,9 +109,11 @@ const MobileNavigation = () => {
                     </StyledList>
                 </StyledListWrapper>
             </StyledNav >
-            <StyledLogoImg
-                fluid={data.image.childImageSharp.fluid}
-                src="techblog logo" />
+            <StyledLogoWrapper>
+                <StyledLogoImg
+                    fluid={data.image.childImageSharp.fluid}
+                    src="techblog logo" />
+            </StyledLogoWrapper>
         </>
     );
 }

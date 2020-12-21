@@ -63,3 +63,9 @@ margin:0 auto;
     width:40%;
 }
 `;
+export const StyledLogoWrapper = styled.div`
+width:100vw;
+height:150px;
+background-color:#0B112A;
+margin-top:-18px;
+`;
