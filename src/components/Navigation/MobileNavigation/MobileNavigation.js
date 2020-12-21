@@ -109,7 +109,9 @@ const MobileNavigation = () => {
                     </StyledList>
                 </StyledListWrapper>
             </StyledNav >
-            <StyledLogoImg fluid={data.image.childImageSharp.fluid} />
+            <StyledLogoImg
+                fluid={data.image.childImageSharp.fluid}
+                src="techblog logo" />
         </>
     );
 }

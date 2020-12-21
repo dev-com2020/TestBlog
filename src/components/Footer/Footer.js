@@ -42,6 +42,7 @@ const Footer = () => {
                 <Logo>
                     <Img
                         fixed={data.image.childImageSharp.fixed}
+                        alt="techblog logo"
                     />
                 </Logo>
             </FooterBox>

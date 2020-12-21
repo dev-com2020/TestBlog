@@ -21,7 +21,9 @@ const Categories = () => {
                 <StyledImage
                     as={Link}
                     to='/komputery'
-                    src={ComputerImg}>
+                    src={ComputerImg}
+                    alt="komputery"
+                >
                     <StyledText>
                         Komputery
                     </StyledText>
@@ -29,7 +31,9 @@ const Categories = () => {
                 <StyledImage
                     as={Link}
                     to='/mobile'
-                    src={MobileImg}>
+                    src={MobileImg}
+                    alt="mobile"
+                >
                     <StyledText>
                         Mobile
                         </StyledText>
@@ -37,7 +41,9 @@ const Categories = () => {
                 <StyledImage
                     as={Link}
                     to='/smart-wear'
-                    src={SmartImg}>
+                    src={SmartImg}
+                    alt="smart wear"
+                >
                     <StyledText>
                         Smart wear
                         </StyledText>
@@ -45,7 +51,9 @@ const Categories = () => {
                 <StyledImage
                     as={Link}
                     to='/dom'
-                    src={HomeImg}>
+                    src={HomeImg}
+                    alt="dom"
+                >
                     <StyledText>
                         Dom
                         </StyledText>
@@ -53,7 +61,9 @@ const Categories = () => {
                 <StyledImage
                     as={Link}
                     to='/gry'
-                    src={GameImg}>
+                    src={GameImg}
+                    alt="gry"
+                >
                     <StyledText>
                         Gry
                         </StyledText>

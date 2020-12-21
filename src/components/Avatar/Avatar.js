@@ -10,7 +10,7 @@ import {
 const Avatar = ({ name, date, isCenter, picture, isPopular }) => {
     return (
         <StyledWrapper isCenter={isCenter} >
-            <StyledImg src={picture} />
+            <StyledImg src={picture} alt={name} />
             <StyledWrapperText isPopular={isPopular}>
                 <StyledParagraph>
                     {name}

@@ -47,7 +47,7 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
             case 'heading':
               return (<StyledArticleHeading key={randomInt}>{item.heading}</StyledArticleHeading>)
             case 'picture':
-              return (<StyledArticleImg key={randomInt} fluid={item.picture.fluid} />)
+              return (<StyledArticleImg key={randomInt} fluid={item.picture.fluid} alt={title} />)
             case 'paragraph':
               return (<StyledArticleParagraph key={randomInt}>{item.paragraph}</StyledArticleParagraph>)
             default:

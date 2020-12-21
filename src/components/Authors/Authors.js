@@ -39,7 +39,7 @@ const Authors = () => {
       <Line />
       <StyledImg
         fluid={authorPicture.fluid}
-        alt="michal test"
+        alt={authorName}
       />
       <StyledHeading>{authorName}</StyledHeading>
       <StyledParagraph>{authorDescription}.</StyledParagraph>

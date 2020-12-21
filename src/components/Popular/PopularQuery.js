@@ -212,7 +212,9 @@ query PopularQuery {
         <Image
           src={mainPhoto}
           as={Link}
-          to={`/${slugify(category)}/${slugify(title)}`}>
+          to={`/${slugify(category)}/${slugify(title)}`}
+          alt={title}
+        >
         </Image>
         <AboutInfo>
           <Category>

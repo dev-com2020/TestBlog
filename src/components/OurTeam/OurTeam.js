@@ -53,22 +53,30 @@ const OurTeam = () => {
                     photo={photo}
                     imie={'imie i nazwisko'}
                     email={`kontakt@gmail.com`}
-                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'} />
+                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'}
+                    alt={'imie i nazwisko'}
+                />
                 <Person
                     photo={photo}
                     imie={'imie i nazwisko'}
                     email={`kontakt@gmail.com`}
-                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'} />
+                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'}
+                    alt={'imie i nazwisko'}
+                />
                 <Person
                     photo={photo}
                     imie={'imie i nazwisko'}
                     email={`kontakt@gmail.com`}
-                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'} />
+                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'}
+                    alt={'imie i nazwisko'}
+                />
                 <Person
                     photo={photo}
                     imie={'imie i nazwisko'}
                     email={`kontakt@gmail.com`}
-                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'} />
+                    info={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dicta, cum quibusdam dolorem incidunt itaquequi eveniet blanditiis numquam doloribus excepturi nulla architecto voluptates corporis natus eius voluptatibus dolores. Provident.'}
+                    alt={'imie i nazwisko'}
+                />
             </PersonsContainer>
             <Line />
             <Cooperation>

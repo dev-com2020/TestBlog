@@ -8,6 +8,7 @@ import Baner from '../components/Baner/Baner';
 import IsMobileHook from '../hooks/IsMobileHook';
 import Footer from '../components/Footer/Footer';
 import useTheme from './useTheme';
+import MySeo from '../components/Seo/Seo';
 
 const StyledWrapper = styled.div`
 width:80vw;
@@ -33,6 +34,7 @@ const MainLayout = ({ children, isBaner, isCategory }) => {
     }
     return (
         <ThemeProvider theme={theme}>
+            <MySeo />
             <GlobalStyle />
             {isMobile ? <MobileNavigation /> : <Navigation />}
             {BanerChecked(isBaner)}

@@ -17,8 +17,7 @@ const Baner = () => {
       }
     `);
   return (
-    <StyledWrapper as={BackgroundImage} fluid={data.file.childImageSharp.fluid}>
-    </StyledWrapper>
+    <StyledWrapper as={BackgroundImage} fluid={data.file.childImageSharp.fluid} src="techblog baner" />
   )
 }
 const StyledWrapper = styled.div`

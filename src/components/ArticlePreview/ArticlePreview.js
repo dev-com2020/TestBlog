@@ -12,7 +12,7 @@ import {
 const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt, theme, lattest }) => {
     return (
         <StyledArticle main={main} as={Link} to={slug}>
-            <StyledImg fluid={image} main={main} index={index} />
+            <StyledImg fluid={image} main={main} index={index} alt={title} />
             <StyledArticleTexts theme={theme} main={main} lattest={lattest}>
                 <StyledParagraph >{category}</StyledParagraph>
                 <StyledHeading >{heading}</StyledHeading>

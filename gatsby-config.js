@@ -2,24 +2,16 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'TechBlog',
-    description: 'DESCRIPTION FOR CHANGE',
+    title: 'Blog o najnowszych informacjach ze swiata IT',
+    description: 'Największy blog informatyczny o nowościach ze świata IT miedzy innymi: smartfony, sprzęt komputerowy, smartwatche, gry, smart dom i wiele innych',
+    keywords: 'blog, informatyka, smartfony, komputerowy, smart, dom, gry',
     author: 'Szymon,Agata,Mateusz',
+    url: 'https://elegant-kare-45c49d.netlify.app/',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-fontawesome-css`,
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: 'Roboto Condensed',
-    //         variants: [`300`, `400`, `700`]
-    //       }
-    //     ],
-    //   },
-    // },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
