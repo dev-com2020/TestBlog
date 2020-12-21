@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 export const StyledNav = styled.nav`
 width:100vw;
@@ -54,4 +55,11 @@ top:3px;
 
 export const StyledHeading = styled.h2`
 color: #fff !important;
+`;
+export const StyledLogoImg = styled(Img)`
+width: 70%;
+margin:0 auto;
+@media(min-width:600px) {
+    width:40%;
+}
 `;
