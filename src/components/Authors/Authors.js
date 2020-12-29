@@ -6,43 +6,37 @@ import { Line } from '../Line/Line';
 
 import {
   StyledWrapper,
-  StyledHeading,
-  StyledImg,
-  StyledParagraph,
+  Image,
+  Heading,
+  PreHeading,
 } from './AuthorsStyles';
 const Authors = () => {
   const data = useStaticQuery(graphql`
-    query Authors {
-        allDatoCmsAboutt {
-          edges {
-            node {
-              authorName
-              authorDescription
-              authorPicture {
-                fluid {
-                  ...GatsbyDatoCmsFluid
-                }
-              }
-            }
-          }
+  query adImage  {
+    image: file(relativePath: {eq: "ad.jpg"}) {
+      id
+      childImageSharp{
+        fixed(
+            width: 350){
+         ...GatsbyImageSharpFixed
+        }
+        fluid{
+          ...GatsbyImageSharpFluid
         }
       }
-    `);
-  const { authorName, authorDescription, authorPicture } = data.allDatoCmsAboutt.edges[0].node;
+    }
+  }
+  `);
   const [isMobile, setIsMobile] = useState(false);
   IsMobileHook(setIsMobile, 1650);
   return (
     <StyledWrapper>
-      <StyledHeading>
-        O naszych twórcach <span role="img" aria-label="happy emoji">😄</span>
-      </StyledHeading>
+      {console.log(data)}
+      <PreHeading>Reklama</PreHeading>
       <Line />
-      <StyledImg
-        fluid={authorPicture.fluid}
-        alt={authorName}
-      />
-      <StyledHeading>{authorName}</StyledHeading>
-      <StyledParagraph>{authorDescription}.</StyledParagraph>
+      <Image fixed={data.image.childImageSharp.fixed}></Image>
+      <Heading>Miejsce na twoją reklamę!</Heading>
+      <PreHeading>Opis reklamy, odnośniki / Lub na całej powierzchni grafika reklamowa</PreHeading>
       {isMobile ? null : <Newsletter />}
     </StyledWrapper>);
 }
