@@ -29,6 +29,7 @@
     "gatsby-plugin-disqus": "^1.2.2",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-layout": "^1.6.0",
+    "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.6.0",
