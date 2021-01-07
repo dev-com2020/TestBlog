@@ -31,84 +31,81 @@ position:relative;
     left:0;
 }
 `;
-export default class Newsletter extends React.Component{
-    constructor(props){
+export default class Newsletter extends React.Component {
+    constructor(props) {
         super(props)
         this.state = {
             email: '',
-            
         }
     }
 
-state = {
-    isChecked : false
-}
-
-handleCheck = () => {
-this.setState({checked: !this.state.checked})
-
-}
-
-changeEmailHandler = (e) => {
-    this.setState({email: e.target.value})
-}
-
-handleSubmit = e => {
-    e.preventDefault();
-    if(this.state.email.length === 0){
-        alert("Wypelnij pole e-mail");
+    state = {
+        isChecked: false
     }
-    else{
-        if(this.state.checked){
 
-            addToMailchimp(this.state.email) 
+    handleCheck = () => {
+        this.setState({ checked: !this.state.checked })
+
+    }
+
+    changeEmailHandler = (e) => {
+        this.setState({ email: e.target.value })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        if (this.state.email.length === 0) {
+            alert("Wypelnij pole e-mail");
+        }
+        else {
+            if (this.state.checked) {
+
+                addToMailchimp(this.state.email)
                 alert('Zostales zapisany do newslettera!')
-                
+            }
+            else {
+                alert('Zaakceptuj regulamin')
+            }
         }
-        else{
-            alert('Zaakceptuj regulamin')
-        }
+
+
+
+
     }
 
-
-
-
-  }
-
-render( ){
-
-    return (
-        <StyledWrapper>
-            <StyledHeading>
-                Newsletter
+    render() {
+        return (
+            <StyledWrapper>
+                <StyledHeading>
+                    Newsletter
             </StyledHeading>
-            <Line />
-            <StyledParagraph>
-                Chcesz być na bieżąco z każdym tematem?
+                <Line />
+                <StyledParagraph>
+                    Chcesz być na bieżąco z każdym tematem?
                 <StyledSpan>Zapisz się do naszego newslettera!</StyledSpan>
-            </StyledParagraph>
-            <StyledImg src={NewsletterImg} alt="newsletter" />
-            <StyledForm onSubmit={this.handleSubmit}>
-                <StyledInputLabel htmlFor="name">
-                    IMIĘ:
+                </StyledParagraph>
+                <StyledImg src={NewsletterImg} alt="newsletter" />
+                <StyledForm onSubmit={this.handleSubmit}>
+                    <StyledInputLabel htmlFor="name">
+                        IMIĘ:
                     <br />
-                    <StyledInput type="text" id="name" />
-                </StyledInputLabel>
-                <StyledInputLabel htmlFor="email">
-                    EMAIL:
+                        <StyledInput type="text" id="name" />
+                    </StyledInputLabel>
+                    <StyledInputLabel htmlFor="email">
+                        EMAIL:
                     <br />
-                    <StyledInput type="email" id="email" value={this.state.email} onChange={this.changeEmailHandler}/>
-                </StyledInputLabel>
-                <StyledCheckboxLabel htmlFor="first-checkbox">
-                    <StyledCheckboxInput type="checkbox" id="first-checkbox" onChange={this.handleCheck} />
+                        <StyledInput type="email" id="email" value={this.state.email} onChange={this.changeEmailHandler} />
+                    </StyledInputLabel>
+                    <StyledCheckboxLabel htmlFor="first-checkbox">
+                        <StyledCheckboxInput type="checkbox" id="first-checkbox" onChange={this.handleCheck} />
                     Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
-                <StyledCheckboxLabel htmlFor="second-checkbox">
-                    <StyledCheckboxInput type="checkbox" id="second-checkbox"/>
+                    <StyledCheckboxLabel htmlFor="second-checkbox">
+                        <StyledCheckboxInput type="checkbox" id="second-checkbox" />
                     Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
-                <StyledButton className="submit">ZAPISZ SIĘ!</StyledButton>
-            </StyledForm>
-        </StyledWrapper>);
-        }
+                    <StyledButton className="submit">ZAPISZ SIĘ!</StyledButton>
+                </StyledForm>
+            </StyledWrapper>);
+    }
 }

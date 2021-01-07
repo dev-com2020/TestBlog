@@ -30,24 +30,25 @@ flex-direction: column;
 div{
     display: flex;
     align-items: center;
+    justify-content:center;
     padding-bottom: 1rem;
-    span {
-
-        padding: 10px;
-        background-color: blue;
+span {
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
 }
-
     p{
-
-        font-size: 25px;
+        font-size: 2.5rem;
         font-weight: bold;
         padding-left: 0.5rem;
-}   
+}
 }
 
 a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 200;
+    margin-left: 0.5rem;
+
 }
 `

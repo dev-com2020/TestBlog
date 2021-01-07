@@ -29,6 +29,7 @@ const Footer = () => {
                         to={'/zespol'}>Nasz Zespoł</StyledLink>
                     <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
                     <StyledLink to={'/regulamin'}>Regulamin</StyledLink>
+                    <StyledLink to={'/regulamin'}>Polityka prywatności</StyledLink>
                 </BlogInfo>
                 <SocialMedia>
                     <h2>SOCIAL MEDIA</h2>
