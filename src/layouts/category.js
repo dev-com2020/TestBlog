@@ -75,14 +75,8 @@ const CategoryLayout = ({ dates, title }) => {
                     return (
                         <ArticlePreview
                             key={uuid()}
-                            excerpt={info.excerpt}
                             title={info.articleCategory}
-                            image={info.mainPhoto.fluid}
-                            category={info.articleCategory}
-                            heading={info.articleTitle}
-                            name={info.author}
-                            date={info.meta.createdAt}
-                            picture={info.thumbnail.url}
+                            {...info}
                             slug={`${slugify(info.articleTitle)}`}
                         />
                     )

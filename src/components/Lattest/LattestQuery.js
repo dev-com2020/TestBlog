@@ -149,21 +149,18 @@ const LattestQuery = () => {
   return (
     <ArticlePreviewWrapper>
       {categories.map(post => (
-        <ArticlePreview
-          index
-          main
-          lattest
-          excerpt={post.excerpt}
-          key={uuid()}
-          title={post.articleCategory}
-          image={post.mainPhoto.fluid}
-          category={post.articleCategory}
-          heading={post.articleTitle}
-          name={post.author}
-          date={post.meta.createdAt}
-          picture={post.thumbnail.url}
-          slug={`${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
-        />
+        <>
+          <ArticlePreview
+            index
+            main
+            lattest
+            key={uuid()}
+            {...post}
+            image={post.mainPhoto}
+            slug={`${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
+          />
+          {console.log(post)}
+        </>
       ))}
     </ArticlePreviewWrapper>
   )

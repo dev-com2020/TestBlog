@@ -9,15 +9,15 @@ import {
     StyledArticle,
     StyledExcerpt
 } from './ArticlePreviewStyles';
-const ArticlePreview = ({ image, category, heading, name, date, picture, slug, main, index, excerpt, theme, lattest }) => {
+const ArticlePreview = ({ mainPhoto, articleCategory, articleTitle, author, meta, thumbnail, slug, main, index, excerpt, theme, lattest }) => {
     return (
         <StyledArticle main={main} as={Link} to={slug}>
-            <StyledImg fluid={image} main={main} index={index} alt={category} />
+            <StyledImg fluid={mainPhoto.fluid} main={main} index={index} alt={articleCategory} />
             <StyledArticleTexts theme={theme} main={main} lattest={lattest}>
-                <StyledParagraph >{category}</StyledParagraph>
-                <StyledHeading >{heading}</StyledHeading>
+                <StyledParagraph >{articleCategory}</StyledParagraph>
+                <StyledHeading >{articleTitle}</StyledHeading>
                 <StyledExcerpt >{excerpt}</StyledExcerpt>
-                <StyledAvatar name={name} date={date} picture={picture} />
+                <StyledAvatar name={author} date={meta.createdAt} picture={thumbnail.url} />
             </StyledArticleTexts>
         </StyledArticle>
     );

@@ -206,14 +206,7 @@ query ThemeArticleQuery {
           theme
           main
           key={uuid()}
-          excerpt={post.excerpt}
-          title={post.articleCategory}
-          image={post.mainPhoto.fluid}
-          category={post.articleCategory}
-          heading={post.articleTitle}
-          name={post.author}
-          date={post.meta.createdAt}
-          picture={post.thumbnail.url}
+          {...post}
           slug={`/${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
         />
       )}
