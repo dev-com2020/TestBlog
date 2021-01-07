@@ -63,7 +63,7 @@ height:${({ main }) => main ? "400px" : "100%"};
 
 @media(max-width:1366px) {
     width:${({ theme }) => theme ? "100%" : "30%"};
-height:${({ main }) => main ? "300px" : "100%"};
+    height:${({ main }) => main ? "300px" : "100%"};
 }
 @media(max-width:1024px)
 {

@@ -1,11 +1,8 @@
 import React from 'react'
 import Person from './Person'
 import styled from 'styled-components'
-import photo from '../../assets/img/authour-pic.png'
-import agataPhoto from '../../assets/img/agataphoto.jpg';
-import szymonPhoto from '../../assets/img/szymonPhoto.jpg';
-import matiPhoto from '../../assets/img/matiPhoto.jpg';
 import { Line } from '../Line/Line';
+import { graphql, useStaticQuery } from 'gatsby';
 
 
 const Container = styled.div`
@@ -44,6 +41,26 @@ margin-bottom: 3rem;
 }
 `
 const OurTeam = () => {
+    const data = useStaticQuery(graphql`
+    query authors {
+        allDatoCmsTeam(filter:{locale:{eq:"pl"}}) {
+          edges {
+            node {
+              authorPhoto {
+                fluid(maxWidth: 500, maxHeight:500) {
+                    ...GatsbyDatoCmsFluid
+                  }
+              }
+              authorName
+              authorEmail
+              authorDescription
+            }
+          }
+        }
+      }
+    `);
+    const authors = data.allDatoCmsTeam.edges;
+    authors.forEach(item => console.log(item.node));
     return (
         <Container>
             <OurTeamHeadline>
@@ -51,27 +68,12 @@ const OurTeam = () => {
             </OurTeamHeadline>
             <Line />
             <PersonsContainer>
-                <Person
-                    photo={agataPhoto}
-                    imie={'Agata Głogowska'}
-                    email={`kontakt@gmail.com`}
-                    info={'Z zawodu grafik komputerowy, interesuje się również programowaniem stron internetowych oraz montażem filmów'}
-                    alt={'Agata Głogowska'}
-                />
-                <Person
-                    photo={szymonPhoto}
-                    imie={'Szymon Lurka'}
-                    email={`szymon.lurka@interia.pl`}
-                    info={'Z zawodu Front End Developer. Entuzjasta nowych technologii i futyrystycznej wizji przyszłości.'}
-                    alt={'imie i nazwisko'}
-                />
-                <Person
-                    photo={matiPhoto}
-                    imie={'Mateusz Kowalczyk'}
-                    email={`kontakt@gmail.com`}
-                    info={'Hej, nazywam sie mateusz. Jestem zafascynowany web developmentem i obecnie pracuje jako junior front-end developer. W wolnych chwilach lubię grac w gry komputerowe, szczegolnie fpsy, ogladac seriale oraz uprawiac sport'}
-                    alt={'imie i nazwisko'}
-                />
+                {authors.map(item =>
+                    <Person
+                        {...item.node}
+                        key={item.node.name}
+                    />
+                )}
             </PersonsContainer>
             <Line />
             <Cooperation>

@@ -1,24 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-
-
-
+import Img from 'gatsby-image';
 
 const PersonContainer = styled.div`
 width: 100%;
 display: flex;
+flex-direction: column;
 margin-top: 2rem;
 margin-bottom: 2rem;
 display: flex;
 @media (min-width: 1076px){
-    flex-direction: column;
     width: 200px;
     text-align: center;
 }
 `
-
-
-
 const Photo = styled.div`
 @media (min-width: 1076px){
 }
@@ -51,26 +46,27 @@ font-size: 1.3rem;
 
 `
 
-const StyledImg = styled.img`
+const StyledImg = styled(Img)`
 width: 300px;
 height:300px;
+border-radius: 25px;
 `
-const Person = ({ imie, info, email, photo }) => {
+const Person = ({ authorName, authorDescription, authorEmail, authorPhoto }) => {
     return (
         <PersonContainer>
 
             <Photo>
-                <StyledImg src={photo} />
+                <StyledImg fluid={authorPhoto.fluid} />
             </Photo>
             <About>
                 <Name>
-                    {imie}
+                    {authorName}
                 </Name>
                 <Description>
-                    {info}
+                    {authorDescription}
                 </Description>
                 <Email href="mailto:kontakt@gmail.com">
-                    {email}
+                    {authorEmail}
                 </Email>
             </About>
 
