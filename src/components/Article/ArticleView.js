@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from '../Avatar/Avatar';
 import { Disqus } from 'gatsby-plugin-disqus';
 import Popular from '../Popular/Popular';
+import { uuid } from 'uuidv4';
 import { Line } from '../Line/Line';
 
 import {
@@ -42,14 +43,13 @@ const ArticleView = ({ title, category, mainPhoto, author, date, thumbnail, cont
           isCenter />
         {content.map(item => {
           const itemKey = Object.keys(item)[1];
-          let randomInt = Math.floor(Math.random() * 159159159159);
           switch (itemKey) {
             case 'heading':
-              return (<StyledArticleHeading key={randomInt}>{item.heading}</StyledArticleHeading>)
+              return (<StyledArticleHeading key={uuid()}>{item.heading}</StyledArticleHeading>)
             case 'picture':
-              return (<StyledArticleImg key={randomInt} fluid={item.picture.fluid} alt={item.heading} />)
+              return (<StyledArticleImg key={uuid()} fluid={item.picture.fluid} alt={item.heading} />)
             case 'paragraph':
-              return (<StyledArticleParagraph key={randomInt}>{item.paragraph}</StyledArticleParagraph>)
+              return (<StyledArticleParagraph key={uuid()}>{item.paragraph}</StyledArticleParagraph>)
             default:
               return null;
           }

@@ -159,7 +159,6 @@ const LattestQuery = () => {
             image={post.mainPhoto}
             slug={`${slugify(post.articleCategory)}/${slugify(post.articleTitle)}`}
           />
-          {console.log(post)}
         </>
       ))}
     </ArticlePreviewWrapper>

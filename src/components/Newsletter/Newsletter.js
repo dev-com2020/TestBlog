@@ -67,10 +67,6 @@ export default class Newsletter extends React.Component {
                 alert('Zaakceptuj regulamin')
             }
         }
-
-
-
-
     }
 
     render() {
