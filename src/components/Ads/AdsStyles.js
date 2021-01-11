@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+
 export const StyledWrapper = styled.div`
 width:450px;
 display:flex;
@@ -10,11 +10,6 @@ align-items:center;
 align-items:center;
 }
 `;
-
-export const Image = styled(Img)`
-margin-top:50px;
-`;
-
 export const Heading = styled.h2`
 font-size: 3rem;
 `;

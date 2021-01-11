@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import MainLayout from '../layouts/index';
 import styled from 'styled-components';
 import Lattest from '../components/Lattest/Lattest';
-import Authors from "../components/Authors/Authors";
+import Ads from "../components/Ads/Ads";
 import ThemeArticle from '../components/ThemeArticle/ThemeArticle';
 import Newsletter from '../components/Newsletter/Newsletter';
 import IsMobileHook from '../hooks/IsMobileHook';
@@ -21,7 +21,7 @@ overflow:hidden;
 const StyledLattest = styled(Lattest)`
 flex-basis:55%;
 `;
-const StyledAuthors = styled(Authors)`
+const StyledAds = styled(Ads)`
 flex-basis:20%;
 `;
 const StyledNewsletterWrapper = styled.div`
@@ -35,7 +35,7 @@ const IndexPage = () => {
     <MainLayout isBaner isCategory>
       <StyledWrapper>
         <StyledLattest />
-        <StyledAuthors />
+        <StyledAds />
       </StyledWrapper>
       <PopularPosts />
       <ThemeArticle />

@@ -136,8 +136,7 @@ const LattestQuery = () => {
                     }
                 }
             }
-          }
-        }
+          }        }
       }
     `);
   const computer = data.allDatoCmsComputerarticle.edges[0].node;

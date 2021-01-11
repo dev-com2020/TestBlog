@@ -94,11 +94,7 @@ export default class Newsletter extends React.Component {
                     </StyledInputLabel>
                     <StyledCheckboxLabel htmlFor="first-checkbox">
                         <StyledCheckboxInput type="checkbox" id="first-checkbox" onChange={this.handleCheck} />
-                    Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
-                </StyledCheckboxLabel>
-                    <StyledCheckboxLabel htmlFor="second-checkbox">
-                        <StyledCheckboxInput type="checkbox" id="second-checkbox" />
-                    Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez xxx w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
+                        Zgadzam się na przetwarzanie podanych przeze mnie w formularzu danych osobowych przez TEST-BLOG w celu wysyłania mi newslettera, informacji o wpisach blogowych, produktach i usługach, zgodnie z Polityką prywatności.
                 </StyledCheckboxLabel>
                     <StyledButton className="submit">ZAPISZ SIĘ!</StyledButton>
                 </StyledForm>
