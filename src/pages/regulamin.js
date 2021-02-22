@@ -33,7 +33,7 @@ const RegPage = () => {
                     1. Niniejszy Regulamin określa zasady funkcjonowania oraz warunki korzystania z serwisu „test-blog.info.pl”, zwanego dalej Serwisem. Regulamin definiuje prawa i obowiązki korzystających z niego Użytkowników oraz administratora Serwisu w zakresie świadczenia usług drogą elektroniczną.
         </StyledParagraph>
                 <StyledParagraph>
-                    2. „Serwis” oznacza witrynę internetową znajdującą się pod adresem test-blog.infor.pl wraz ze wszelkimi jej podstronami, w tym z wszelkimi dodatkowymi platformami skupionymi w ramach Test Blog, w szczególności: Blog Forum, Zapytaj Test Blog i innymi.
+                    2. „Serwis” oznacza witrynę internetową znajdującą się pod adresem test-blog.info.pl wraz ze wszelkimi jej podstronami, w tym z wszelkimi dodatkowymi platformami skupionymi w ramach Test Blog, w szczególności: Blog Forum, Zapytaj Test Blog i innymi.
                     3. Administratorem Serwisu jest firma Fundacja Rozwoju Przedsiębiorczości "Twój StartUP" DEV-COM ul. Żurawia 6/12 lok 766, 00-503 Warszawa
                     NIP: 5213641211, REGON: 146433467, KRS: 0000442857
                 </StyledParagraph>
